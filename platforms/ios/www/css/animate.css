@@ -1,0 +1,255 @@
+
+/**
+ * 常用css3 动画库
+ */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes noticeFadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+   
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(39px);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateY(39px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes noticeFadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+   
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(39px);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateY(39px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* 淡入 */
+.fadeIn {  
+    animation-name: fadeIn; 
+    -webkit-animation-name: fadeIn; 
+}
+/*淡出*/
+.fadeOut { 
+    animation-name:fadeOut;
+    -webkit-animation-name:fadeOut;
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@eyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+/**
+ * loading加载小动画
+ */
+.ui-loading {
+    width: 40px;
+    height: 40px;
+    text-indent: -10000px;
+    background: url('../images/ui-loading.png') 0 0 no-repeat;
+    -webkit-background-size: 40px 40px;
+    -webkit-animation-name: ui-loading-anim;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: step-start;
+}
+@-webkit-keyframes ui-loading-anim {
+  from {
+        -webkit-transform: rotate(0deg);
+    }
+    8.32% {
+        -webkit-transform: rotate(0deg);
+    }
+    8.33% {
+        -webkit-transform: rotate(30deg);
+    }
+    16.65% {
+        -webkit-transform: rotate(30deg);
+    }
+    16.66% {
+        -webkit-transform: rotate(60deg);
+    }
+    24.99% {
+        -webkit-transform: rotate(60deg);
+    }
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
+    33.32% {
+        -webkit-transform: rotate(90deg);
+    }
+    33.33% {
+        -webkit-transform: rotate(120deg);
+    }
+    41.65% {
+        -webkit-transform: rotate(120deg);
+    }
+    41.66% {
+        -webkit-transform: rotate(150deg);
+    }
+    49.99% {
+        -webkit-transform: rotate(150deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    58.32% {
+        -webkit-transform: rotate(180deg);
+    }
+    58.33% {
+        -webkit-transform: rotate(210deg);
+    }
+    66.65% {
+        -webkit-transform: rotate(210deg);
+    }
+    66.66% {
+        -webkit-transform: rotate(240deg);
+    }
+    74.99% {
+        -webkit-transform: rotate(240deg);
+    }
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+    83.32% {
+        -webkit-transform: rotate(270deg);
+    }
+    83.33% {
+        -webkit-transform: rotate(300deg);
+    }
+    91.65% {
+        -webkit-transform: rotate(300deg);
+    }
+    91.66% {
+        -webkit-transform: rotate(330deg);
+    }
+    99.99% {
+        -webkit-transform: rotate(330deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes ui-loading-anim {
+  from {
+        -webkit-transform: rotate(0deg);
+    }
+    8.32% {
+        -webkit-transform: rotate(0deg);
+    }
+    8.33% {
+        -webkit-transform: rotate(30deg);
+    }
+    16.65% {
+        -webkit-transform: rotate(30deg);
+    }
+    16.66% {
+        -webkit-transform: rotate(60deg);
+    }
+    24.99% {
+        -webkit-transform: rotate(60deg);
+    }
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
+    33.32% {
+        -webkit-transform: rotate(90deg);
+    }
+    33.33% {
+        -webkit-transform: rotate(120deg);
+    }
+    41.65% {
+        -webkit-transform: rotate(120deg);
+    }
+    41.66% {
+        -webkit-transform: rotate(150deg);
+    }
+    49.99% {
+        -webkit-transform: rotate(150deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    58.32% {
+        -webkit-transform: rotate(180deg);
+    }
+    58.33% {
+        -webkit-transform: rotate(210deg);
+    }
+    66.65% {
+        -webkit-transform: rotate(210deg);
+    }
+    66.66% {
+        -webkit-transform: rotate(240deg);
+    }
+    74.99% {
+        -webkit-transform: rotate(240deg);
+    }
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+    83.32% {
+        -webkit-transform: rotate(270deg);
+    }
+    83.33% {
+        -webkit-transform: rotate(300deg);
+    }
+    91.65% {
+        -webkit-transform: rotate(300deg);
+    }
+    91.66% {
+        -webkit-transform: rotate(330deg);
+    }
+    99.99% {
+        -webkit-transform: rotate(330deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}

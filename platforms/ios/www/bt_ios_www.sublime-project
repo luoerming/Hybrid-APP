@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/modules/mobile"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/luoerming/Documents/git/bt_cordova"
+		}
+	]
+}

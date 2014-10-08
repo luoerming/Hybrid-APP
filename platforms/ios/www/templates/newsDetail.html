@@ -1,0 +1,33 @@
+<!-- 详情新闻  -->
+<section id="view-newsDetail" class="hidden">
+	<header>
+		<div class="topBar"></div>
+		<div class="button-wrap">
+			<div class="button-left-wrap">
+				<button class="onBind" data-vin="view-list" data-sd="sr"><div class="label"><i class="iconfont icon-back"></i></div></button>
+			</div>
+			<div class="button-right-wrap">
+				<button class="icon-favor-wrap"><div class="label"><i class="iconfont icon-favor"></i></div></button>
+				<button class="icon-share-wrap"><div class="label"><i class="iconfont icon-share"></i></div></button>
+			</div>
+		</div>
+	</header>
+	<div class="scrollMask"></div>
+	<div class="scrollWrap">
+		<div class="scroll">
+			<div class="content">
+				<div class="hd">
+					<h2> <%= title %> </h2>
+					<div class="tips">
+						<span class="newstime"> <%= newstime %> </span>
+						<span class="columnName"> <%= classname %> </span>
+					</div>
+				</div>
+				<div class="bd">
+					<%= newstext %>
+				</div>
+			</div>
+			<div class="loading"></div>
+		</div>
+	</div>
+</section>

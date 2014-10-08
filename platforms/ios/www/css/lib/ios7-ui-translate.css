@@ -1,0 +1,329 @@
+
+/**
+ * ios7-ios-transition UI动画组件
+ */
+.slin, .srin, .slout, .srout, .popin, .popout, .noanim {
+	pointer-events: none;
+}
+.slin .scrollMask, .srout .scrollMask {
+	z-index: 5;
+}
+.slin .scrollWrap, .srout .scrollWrap {
+	z-index: 6;
+}
+.scrollWrap {
+	position: absolute;
+	top: 55px;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+.scroll {
+	min-height: 100%;
+	padding-bottom: 50px;
+}
+.scrollMask {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 55px;
+	bottom: 0;
+	background-color: #fff;
+	/*-webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.1);*/
+	        /*box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.1);*/
+}
+.slout .scrollMask, .srin .scrollMask {
+	/*background-color: black;*/
+}
+section {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+section .scroll, 
+section .scrollMask, 
+section header button, 
+section .nav, 
+section,  header button .label {
+	-webkit-animation-fill-mode: forwards;
+	        animation-fill-mode: forwards;
+	-webkit-animation-duration: 400ms;
+	        animation-duration: 400ms;
+}
+section,  
+section .scroll, 
+section .scrollMask, 
+section .nav, 
+section header button .label {
+	-webkit-animation-timing-function: cubic-bezier(.1, .7, .1, 1);
+	        animation-timing-function: cubic-bezier(.1, .7, .1, 1);
+}
+.slin header button, 
+.srin header button {
+	-webkit-animation-timing-function: cubic-bezier(.6, .1, .3, 1);
+	        animation-timing-function: cubic-bezier(.6, .1, .3, 1);
+}
+.slout header button, 
+.srout header button {
+	-webkit-animation-timing-function: cubic-bezier(.1, 1, .1, 1);
+	        animation-timing-function: cubic-bezier(.1, 1, .1, 1);
+}
+.slin .scroll {
+    -webkit-animation-name: slin-scroll;
+            animation-name: slin-scroll;
+}
+.slin .scrollMask {
+    -webkit-animation-name: slin-scrollMask;
+            animation-name: slin-scrollMask;
+}
+.slin .nav {
+    -webkit-animation-name: slin-textbox;
+            animation-name: slin-textbox;
+}
+.slin header button {
+    -webkit-animation-name: fadein;
+            animation-name: fadein;
+}
+.slin header button.left.arrow .label {
+    -webkit-animation-name: slin-left-nav-btn;
+            animation-name: slin-left-nav-btn;
+}
+.slin header, .slin .scroll {
+    background-color: transparent;
+}
+.slout header button {
+    -webkit-animation-name: fadeout;
+            animation-name: fadeout;
+}
+.slout header button.left.arrow .label {
+    -webkit-animation-name: slout-left-nav-btn;
+            animation-name: slout-left-nav-btn;
+}
+.slout .nav {
+    -webkit-animation-name: slout-textbox;
+            animation-name: slout-textbox;
+}
+.slout .scroll, .slout .scrollMask {
+    -webkit-animation-name: slout-scroll;
+            animation-name: slout-scroll;
+}
+
+/* webkit */
+@-webkit-keyframes slin-scroll {
+	from { -webkit-transform: translateX(100%); }
+	to   { -webkit-transform: translateX(0);    }
+}
+@-webkit-keyframes slin-scrollMask {
+	from { -webkit-transform: translateX(100%); /*-webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2); */ }
+	to   { -webkit-transform: translateX(0);    /*-webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.02);*/ }
+}
+@-webkit-keyframes slin-textbox {
+	from { -webkit-transform: translateX(60%); opacity: 0; }
+	to   { -webkit-transform: translateX(0);   opacity: 1; }
+}
+@-webkit-keyframes slin-left-nav-btn {
+	from { -webkit-transform: translateX(100%); }
+	to   { -webkit-transform: translateX(0);    }
+}
+@-webkit-keyframes slout-left-nav-btn {
+	from { -webkit-transform: translateX(0);     }
+	to   { -webkit-transform: translateX(-100%); }
+}
+@-webkit-keyframes slout-textbox {
+	from { -webkit-transform: translateX(0);    opacity: 1; }
+	to   { -webkit-transform: translateX(-40%); opacity: 0; }
+}
+@-webkit-keyframes slout-scroll {
+	from { -webkit-transform: translateX(0);    opacity: 1;   }
+	to   { -webkit-transform: translateX(-25%); opacity: 0.9; }
+}
+@-webkit-keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+@-webkit-keyframes fadeout {
+	from { opacity: 1; }
+	to   { opacity: 0; }
+}
+
+/* W3C */
+@keyframes slin-scroll {
+	from { transform: translateX(100%); }
+	to   { transform: translateX(0);    }
+}
+@keyframes slin-scrollMask {
+	from { transform: translateX(100%); /*box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2);*/  }
+	to   { transform: translateX(0);    /*box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.02);*/ }
+}
+@keyframes slin-textbox {
+	from { transform: translateX(60%); opacity: 0; }
+	to   { transform: translateX(0);   opacity: 1; }
+}
+@keyframes slin-left-nav-btn {
+	from { transform: translateX(100%); }
+	to   { transform: translateX(0);    }
+}
+@keyframes slout-left-nav-btn {
+	from { transform: translateX(0);     }
+	to   { transform: translateX(-100%); }
+}
+@keyframes slout-textbox {
+	from { transform: translateX(0);    opacity: 1; }
+	to   { transform: translateX(-40%); opacity: 0; }
+}
+@keyframes slout-scroll {
+	from { transform: translateX(0);    opacity: 1;   }
+	to   { transform: translateX(-25%); opacity: 0.9; }
+}
+@keyframes fadein {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+@keyframes fadeout {
+	from { opacity: 1; }
+	to   { opacity: 0; }
+}
+
+/* 从左至右切换动画 */
+.srout .scroll {
+    -webkit-animation-name: srout-scroll;
+            animation-name: srout-scroll;
+}
+.srout .scrollMask {
+    -webkit-animation-name: srout-scrollMask;
+            animation-name: srout-scrollMask;
+}
+.srout .nav {
+    -webkit-animation-name: srout-textbox;
+            animation-name: srout-textbox;
+}
+.srout header button {
+    -webkit-animation-name: fadeout;
+            animation-name: fadeout;
+}
+.srout header button.left.arrow .label {
+    -webkit-animation-name: srout-left-nav-btn;
+            animation-name: srout-left-nav-btn;
+}
+.srout header, .srout .scroll {
+    background-color: transparent;
+}
+.srin header button {
+    -webkit-animation-name: fadein;
+            animation-name: fadein;
+}
+.srin header button.left.arrow .label {
+    -webkit-animation-name: srin-left-nav-btn;
+            animation-name: srin-left-nav-btn;
+}
+.srin .nav {
+    -webkit-animation-name: srin-textbox;
+            animation-name: srin-textbox;
+}
+.srin .scroll, .srin .scrollMask {
+    -webkit-animation-name: srin-scroll;
+            animation-name: srin-scroll;
+
+}
+
+/* webkit */
+@-webkit-keyframes srout-scroll {
+	from { -webkit-transform: translateX(0);    }
+	to   { -webkit-transform: translateX(100%); }
+}
+@-webkit-keyframes srout-scrollMask {
+	from { -webkit-transform: translateX(0);    /*-webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.02);*/ }
+	to   { -webkit-transform: translateX(100%); /*-webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2);*/  }
+}
+@-webkit-keyframes srout-textbox {
+	from { -webkit-transform: translateX(0);   opacity: 1; }
+	to   { -webkit-transform: translateX(60%); opacity: 0; }
+}
+@-webkit-keyframes srout-left-nav-btn {
+	from { -webkit-transform: translateX(0);    opacity: 1; }
+	to   { -webkit-transform: translateX(100%); opacity: 0; }
+}
+@-webkit-keyframes srin-left-nav-btn {
+	from { -webkit-transform: translateX(-100%); opacity: 0; }
+	to   { -webkit-transform: translateX(0);     opacity: 1; }
+}
+@-webkit-keyframes srin-textbox {
+	from { -webkit-transform: translateX(-50%); opacity: 0; }
+	to   { -webkit-transform: translateX(0);    opacity: 1; }
+}
+@-webkit-keyframes srin-scroll {
+	from { -webkit-transform: translateX(-25%); opacity: 0.9; }
+	to   { -webkit-transform: translateX(0);    opacity: 1;   }
+}
+
+/* W3C */
+@keyframes srout-scroll {
+	from { transform: translateX(0);    }
+	to   { transform: translateX(100%); }
+}
+@keyframes srout-scrollMask {
+	from { transform: translateX(0);    /*-webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.02);*/ }
+	to   { transform: translateX(100%);/* -webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2);*/  }
+}
+@keyframes srout-textbox {
+	from { transform: translateX(0);   opacity: 1; }
+	to   { transform: translateX(60%); opacity: 0; }
+}
+@keyframes srout-left-nav-btn {
+	from { transform: translateX(0);    opacity: 1; }
+	to   { transform: translateX(100%); opacity: 0; }
+}
+@keyframes srin-left-nav-btn {
+	from { transform: translateX(-100%); opacity: 0; }
+	to   { transform: translateX(0);     opacity: 1; }
+}
+@keyframes srin-textbox {
+	from { transform: translateX(-50%); opacity: 0; }
+	to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes srin-scroll {
+	from { transform: translateX(-25%); opacity: 0.9; }
+	to   { transform: translateX(0);    opacity: 1;   }
+}
+
+
+/* 弹入 */
+.popin {
+    -webkit-animation-name: popin;
+            animation-name: popin;
+}
+@-webkit-keyframes popin {
+	from { -webkit-transform: translateY(100%); /* opacity: 1; */ }
+	to   { -webkit-transform: translateY(0);    /* opacity: 0; */ }
+}
+@keyframes popin {
+	from { transform: translateY(100%); /* opacity: 1; */ }
+	to   { transform: translateY(0);    /* opacity: 0; */ }
+}
+
+/* 弹出 */
+.popout {
+    -webkit-animation-name: popout;
+            animation-name: popout;
+}
+@-webkit-keyframes popout {
+	from { -webkit-transform: translateY(0);    /* opacity: 1; */ }
+	to   { -webkit-transform: translateY(100%); /* opacity: 0; */ }
+}
+@keyframes popout {
+	from { transform: translateY(0);    /* opacity: 1; */ }
+	to   { transform: translateY(100%); /* opacity: 0; */ }
+}
+
+.noanim {
+    -webkit-animation-name: noanim;
+            animation-name: noanim;
+}
+@-webkit-keyframes noanim {
+	from { opacity: 1; }
+	to   { opacity: 1; }
+}
+@keyframes noanim {
+	from { opacity: 1; }
+	to   { opacity: 1; }
+}

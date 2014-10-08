@@ -1,0 +1,410 @@
+
+/* 
+* Í¼¼¯ÏêÇéÑùÊ½ 
+*/
+
+#view-pictureDetail {
+	z-index: 1;
+}
+#view-pictureDetail .scrollMask,
+#view-pictureDetail .scrollWrap {
+	top: 0; 
+}
+#view-pictureDetail .scrollMask {
+	background-color: black;
+}
+#view-pictureDetail .scrollWrap header {
+	border-bottom: none;
+	z-index: 1;
+}
+#view-pictureDetail header .button-wrap .iconfont {
+	color: white;
+}
+
+#view-pictureDetail .scroll .ui-slider {
+	margin-top: -55px;
+}
+#view-pictureDetail .scroll .ui-slider > .item {
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	-webkit-backface-visibility: hidden;
+	background:black url(../images/loading_opt.gif) center center no-repeat;
+}
+#view-pictureDetail .scroll .ui-slider > .item img {
+	
+}
+#view-pictureDetail .scroll .ui-slider > .item .pincWrap {
+	margin: 0 8px;
+	transition: margin 0.2s linear;
+}
+#view-pictureDetail .scroll .ui-slider > .item.current .pincWrap{
+	margin: 0;
+}
+#view-pictureDetail.srout .description,
+#view-pictureDetail.slin .description {
+	display: none;
+}
+#view-pictureDetail .scroll .description {
+	position: fixed;
+	bottom: 20px;
+	left: 0px;
+	width: 96%;
+	height: 20%;
+	margin: 0 2%;
+	color: white;
+	-webkit-animation-duration: 1s;
+}
+#view-pictureDetail .scroll .description h1 {
+	display: inline-block;
+	font-size: 1.1em;
+	font-weight: 800;
+	line-height: 1.3em;
+	width: 86%;
+	overflow: hidden;
+}
+#view-pictureDetail .scroll .description .count b {
+	font-size: 1.2em;
+	font-weight: 800;
+	color: #fa4e46;
+}
+#view-pictureDetail .scroll .description .count s {
+	text-decoration: none;
+	font-size: 1em;
+	font-weight: 400;
+	padding-left: 3px;
+}
+#view-pictureDetail .scroll .description p {
+	color: gray;
+	line-height: 1.3em;
+	font-weight: 500;
+	margin-top: 10px;
+}
+#view-pictureDetail .scroll .description .count {
+	position: fixed;
+	right: 5px;
+}
+
+/**
+ * ÐÂÎÅÏêÇé
+ */
+#view-newsDetail {
+	z-index: 1;
+}
+#view-newsDetail nav {
+	display: none;
+}
+#view-newsDetail header {
+	/*background-color: #ca2927;*/
+}
+#view-newsDetail header .button-left-wrap button {
+	padding-right: 35px;
+}
+#view-newsDetail header .button-wrap .iconfont {
+	color: black;
+}
+
+#view-newsDetail .scroll {
+	overflow: auto;
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+#view-newsDetail .scroll .content {
+	padding: 0 12px;
+	margin-bottom: 60px;
+}
+#view-newsDetail .scroll .content .bd {
+	margin-top: 15px;
+}
+#view-newsDetail .scroll .content .bd p {
+	color: #1d1d1d;
+	text-indent: 2em;
+	line-height: 1.5;
+	margin-bottom: 16px;
+	position: relative;
+	word-break: break-all;
+}
+#view-newsDetail .scroll .content .bd p:last-child {
+	margin-top: 10px;
+	font-size: 14px;
+	color: gray;
+	text-align: right;
+}
+#view-newsDetail .scroll .loading {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	-webkit-backface-visibility: hidden;
+	background: white url(../images/loading_opt.gif) center center no-repeat;
+}
+#view-newsDetail .scroll .hd {
+	border-left: 3px solid #ca2927;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+#view-newsDetail .scroll .hd h2 {
+	font-size: 20px;
+	line-height: 24px;
+	text-align: justify;
+}
+#view-newsDetail .scroll .hd .tips {
+	text-align: left;
+	padding-top: 8px;
+}
+#view-newsDetail .scroll .hd .tips span {
+	color: gray;
+	font-size: 14px
+}
+
+/*²é¿´ÊÕ²Ø¼Ð (¸²¸Ç newsDetailµÄÄ¬ÈÏÑùÊ½)*/
+/*#view-newsDetail.inViewMmeber header {
+	background: white;
+}
+#view-newsDetail.inViewMmeber header .iconfont.icon-back:before {
+	margin-top: -20px;
+	-webkit-transform: rotate(-90deg);
+}
+#view-newsDetail.inViewMmeber .button-left-wrap {
+	float: right;
+	text-align: right;
+}
+#view-newsDetail.inViewMmeber .button-right-wrap {
+	float: left;
+	text-align: left;
+}
+#view-newsDetail.inViewMmeber .button-right-wrap .icon-favor-wrap{
+	padding-left: 5px;
+}*/
+
+/*»áÔ±ÖÐÐÄ*/
+.member {
+	overflow: auto;
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+.member .member-background {
+	overflow: hidden;
+}
+.member .member-background img,
+.member .member-profile-picture img{
+	width: 100%;
+}
+.member .member-header-wrapper {
+  display: -webkit-box;
+   margin-top: 20px; 
+}
+.member .member-header-wrapper .member-profile-picture {
+	margin-left: 20px;
+	width: 65px;
+	height: 65px;
+	overflow: hidden;
+	background: white;
+	border-radius: 50%;
+	border: 3px solid rgba(241, 241, 241, 0.58);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+.member .member-header-wrapper .member-profile-picture img {
+	opacity: 0;
+	visibility: hidden;
+}
+.member .member-header-wrapper .member-profile-picture .icon-member-profile-picture {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 23%;
+}
+.member .member-header-wrapper .member-profile-picture .icon-member-profile-picture:before {
+	font-size: 50px;
+	color: rgb(223, 223, 223);
+}
+.member .member-item-inner {
+	padding-left: 15px;
+}
+.member .member-item-inner .member-item-inner-title	{
+	line-height: 40px;
+}
+.member .member-item-inner .member-item-inner-info {
+	/*padding-top: 5px;*/
+	opacity: 0.4;
+	font-size: 15px;
+}
+/*logged*/
+.member .logged .member-profile-picture {
+	border: none;
+}
+.member .logged .member-profile-picture i {
+	opacity: 0;
+	visibility: hidden;
+	display: none!important;
+}
+.member .logged .member-profile-picture img {
+	opacity: 1;
+	visibility: visible;
+}
+.member .member-favor {
+	min-height: 50%;
+	margin: 20px 10px 0 10px;
+}
+.member .member-favor .item-content {
+	padding-left: 0;
+}
+.member .member-favor .content-block-title .iconfont.icon-edit:before {
+	font-size: 22px;
+	padding-left: 20px;
+}
+.member .member-favor .list-block li:last-child .item-inner {
+	border-bottom: 0;
+}
+.member .member-favor .list-block li {
+}
+.member .member-favor .list-block li.removed {
+	-webkit-animation:fadeOut .5s .1s ease both;
+	-webkit-animation-name:fadeOut;
+}
+.member .member-favor .item-content .item-inner .item-title {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	font-size: 14px;
+}
+
+.member .member-favor .list-block.favorListPlaceholder {
+	text-align: center;
+}
+.member .member-favor .list-block.favorListPlaceholder ul {
+	border-bottom: none;
+	padding-top: 30px;
+}
+.member .member-favor .list-block.favorListPlaceholder .icon-favorAll:before {
+	font-size: 60px;
+	color: gray;
+	opacity: .4;
+}
+.member .member-favor .list-block.favorListPlaceholder p {
+	font-size: 14px;
+	line-height: 24px;
+	color: gray;
+	opacity: .4;
+}
+
+.member .member-favor .content-block-title {
+	position: relative;
+	width: 100%;
+	font-size: 16px;
+	color: black;
+	margin-left: 0;
+	margin-top: 0;
+}
+.member .member-favor .content-block-title .right {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.member .member-favor .content-block-title .icon-list,
+.member .member-favor .content-block-title .icon-favor {
+	font-size: 20px;
+}
+
+/* »áÔ±µÇÂ¼ */
+#view-login {
+	z-index: 2;
+	/*display: none;*/
+}
+#view-login.fadeOut {
+	display:block;
+	opacity: 0;
+	-webkit-animation:fadeOut .1s .2s ease both;
+	-webkit-animation-name:fadeOut;
+}
+#view-login header {
+	background: white;
+}
+#view-login button.login-right-close {
+	padding:3px 3px 3px 15px;
+	/*border: 1px solid red;*/
+}
+.login {
+	transition-duration: 300ms;
+	-webkit-transition-property: margin;	
+}
+.login .login-background-image {
+	margin: 10% auto;
+	height: 125px;
+	width: 125px;
+	background: url('../images/biketo_logo.png') center no-repeat;
+	background-size: 100%;
+	overflow: hidden;
+	border-radius: 3px;
+}
+.login input[type=text], 
+.login input[type=password] {
+    display: block;
+    width: 80%;
+    height: 48px;
+    margin: 0 auto;
+    font-size: 19px;
+    outline: none;
+    line-height: 48px;
+    border-radius: 0;
+}
+.login .login-button {
+    display: block;
+    width: 80%;
+    margin: 0 auto 0 auto;
+    font-size: 18px;
+}
+.login .introduce {
+	padding: 20px 0;
+	text-align: center;
+	box-sizing: border-box;
+	color: gray;
+	font-size: 14px;
+}
+.login-right-close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	z-index: 2;
+	font-size: 14px;
+}
+.login .login-tips {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 14px;
+	text-indent: 10px;
+	color: #e21a22;
+}
+.login .login-tips.hidden {
+	opacity: 0;
+}
+.login .login-tips.active {
+	-webkit-animation:flash 1s .2s ease both;
+}
+.login .login-tips .icon-tipsWrong {
+	font-size: 15px;
+}
+.login .login-tips .password-tips {
+	padding-top: 10px;
+	color: gray;
+	font-size: 12px;
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+}
+.login .login-tips .password-tips.active {
+	opacity: 1;
+	visibility: visible;
+	display: block;
+}
+
+@-webkit-keyframes flash{
+	0%,50%,100%{ opacity: 1;}
+	25%,75%{ opacity: 0;}
+}
+

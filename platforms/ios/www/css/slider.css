@@ -1,0 +1,68 @@
+/**
+ * 能用幻灯片组件
+ * 1、新闻列表幻灯片
+ * 2、图集幻灯片组建
+ */
+.ui-sliderWrap {
+	position: relative;
+	background: rgb(248, 248, 248);
+}
+.ui-slider {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+}
+.ui-slider > .item {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	background:#E7E7E7 url(../images/image-loading.png) center center no-repeat;
+}
+.ui-slider.animate > .item {
+	 transition: all .3s;
+     -webkit-transition: all .3s;
+}
+.ui-slider > .item img {
+	width: 100%;
+}
+.ui-slider > .item p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: left;
+	pointer-events: none;
+	overflow: hidden;
+	word-break: break-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 5px 0;
+	text-indent: 10px;
+}
+
+/* 用点来显示幻灯片数量 */
+.ui-slider-dots { 
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    padding: 0 6px;
+    text-align: right;
+}
+.ui-slider-dots > b {
+    display: inline-block;
+    margin: 0 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(144, 144, 144, 0.8);
+}
+.ui-slider-dots .ui-state-active {
+    background: #fff;
+}
+

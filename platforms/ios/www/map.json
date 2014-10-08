@@ -1,0 +1,248 @@
+{
+    "res": {
+        "cordova.js": {
+            "uri": "/cordova.js",
+            "type": "js",
+            "deps": [
+                "cordova/channel",
+                "cordova/platform",
+                "cordova/exec",
+                "cordova/utils",
+                "cordova",
+                "cordova/base64",
+                "cordova/modulemapper",
+                "cordova/pluginloader",
+                "cordova/builder",
+                "cordova/urlutil",
+                "cordova/plugin_list",
+                "cordova/init"
+            ]
+        },
+        "cordova_plugins.js": {
+            "uri": "/cordova_plugins.js",
+            "type": "js"
+        },
+        "css/animate.css": {
+            "uri": "/css/animate.css",
+            "type": "css"
+        },
+        "css/commom.css": {
+            "uri": "/css/commom.css",
+            "type": "css"
+        },
+        "css/detail.css": {
+            "uri": "/css/detail.css",
+            "type": "css"
+        },
+        "css/lib/flowplayer-minimalist-skin.css": {
+            "uri": "/css/lib/flowplayer-minimalist-skin.css",
+            "type": "css"
+        },
+        "css/lib/iconfont.css": {
+            "uri": "/css/lib/iconfont.css",
+            "type": "css"
+        },
+        "css/lib/ios7-ui-translate.css": {
+            "uri": "/css/lib/ios7-ui-translate.css",
+            "type": "css"
+        },
+        "css/lib/reset.css": {
+            "uri": "/css/lib/reset.css",
+            "type": "css"
+        },
+        "css/list.css": {
+            "uri": "/css/list.css",
+            "type": "css"
+        },
+        "css/main.css": {
+            "uri": "/css/main.css",
+            "type": "css"
+        },
+        "css/slider.css": {
+            "uri": "/css/slider.css",
+            "type": "css"
+        },
+        "js/app.js": {
+            "uri": "/js/app.js",
+            "type": "js"
+        },
+        "js/collections/newsCollection.js": {
+            "uri": "/js/collections/newsCollection.js",
+            "type": "js"
+        },
+        "js/collections/newsSliderCollection.js": {
+            "uri": "/js/collections/newsSliderCollection.js",
+            "type": "js"
+        },
+        "js/collections/pictureCollection.js": {
+            "uri": "/js/collections/pictureCollection.js",
+            "type": "js"
+        },
+        "js/collections/pictureListCollection.js": {
+            "uri": "/js/collections/pictureListCollection.js",
+            "type": "js"
+        },
+        "js/collections/videoListCollection.js": {
+            "uri": "/js/collections/videoListCollection.js",
+            "type": "js"
+        },
+        "js/libs/backbone/1.1.2/backbone.js": {
+            "uri": "/js/libs/backbone/1.1.2/backbone.js",
+            "type": "js",
+            "deps": [
+                "underscore"
+            ]
+        },
+        "js/libs/backbone/plugins/backbone.fetch-cache.js": {
+            "uri": "/js/libs/backbone/plugins/backbone.fetch-cache.js",
+            "type": "js"
+        },
+        "js/libs/cordova/StreamingMedia.js": {
+            "uri": "/js/libs/cordova/StreamingMedia.js",
+            "type": "js"
+        },
+        "js/libs/cordova/cordova.js": {
+            "uri": "/js/libs/cordova/cordova.js",
+            "type": "js",
+            "deps": [
+                "cordova/channel",
+                "cordova/platform",
+                "cordova/exec",
+                "cordova/utils",
+                "cordova",
+                "cordova/base64",
+                "cordova/modulemapper",
+                "cordova/pluginloader",
+                "cordova/builder",
+                "cordova/urlutil",
+                "cordova/plugin_list",
+                "cordova/init"
+            ]
+        },
+        "js/libs/cordova/cordova_plugins.js": {
+            "uri": "/js/libs/cordova/cordova_plugins.js",
+            "type": "js"
+        },
+        "js/libs/extend/fastclick.js": {
+            "uri": "/js/libs/extend/fastclick.js",
+            "type": "js"
+        },
+        "js/libs/extend/localStorage.js": {
+            "uri": "/js/libs/extend/localStorage.js",
+            "type": "js"
+        },
+        "js/libs/extend/slider.js": {
+            "uri": "/js/libs/extend/slider.js",
+            "type": "js"
+        },
+        "js/libs/extend/ui.js": {
+            "uri": "/js/libs/extend/ui.js",
+            "type": "js"
+        },
+        "js/libs/hammer/2.0.1/hammer.js": {
+            "uri": "/js/libs/hammer/2.0.1/hammer.js",
+            "type": "js"
+        },
+        "js/libs/iscroll/5.0/iscroll.js": {
+            "uri": "/js/libs/iscroll/5.0/iscroll.js",
+            "type": "js"
+        },
+        "js/libs/iscroll/iscrollAssist.js": {
+            "uri": "/js/libs/iscroll/iscrollAssist.js",
+            "type": "js"
+        },
+        "js/libs/jquery/1.11.1/jquery.js": {
+            "uri": "/js/libs/jquery/1.11.1/jquery.js",
+            "type": "js"
+        },
+        "js/libs/require/2.1.11/require.js": {
+            "uri": "/js/libs/require/2.1.11/require.js",
+            "type": "js"
+        },
+        "js/libs/require/plugins/text.js": {
+            "uri": "/js/libs/require/plugins/text.js",
+            "type": "js"
+        },
+        "js/libs/underscore/1.6.0/underscore.js": {
+            "uri": "/js/libs/underscore/1.6.0/underscore.js",
+            "type": "js"
+        },
+        "js/main.js": {
+            "uri": "/js/main.js",
+            "type": "js"
+        },
+        "js/models/news.js": {
+            "uri": "/js/models/news.js",
+            "type": "js"
+        },
+        "js/models/newsDetaill.js": {
+            "uri": "/js/models/newsDetaill.js",
+            "type": "js"
+        },
+        "js/models/newsSlider.js": {
+            "uri": "/js/models/newsSlider.js",
+            "type": "js"
+        },
+        "js/models/picture.js": {
+            "uri": "/js/models/picture.js",
+            "type": "js"
+        },
+        "js/models/video.js": {
+            "uri": "/js/models/video.js",
+            "type": "js"
+        },
+        "js/namespace.js": {
+            "uri": "/js/namespace.js",
+            "type": "js"
+        },
+        "js/router.js": {
+            "uri": "/js/router.js",
+            "type": "js"
+        },
+        "js/views/app.js": {
+            "uri": "/js/views/app.js",
+            "type": "js"
+        },
+        "js/views/item/news.js": {
+            "uri": "/js/views/item/news.js",
+            "type": "js"
+        },
+        "js/views/item/picture.js": {
+            "uri": "/js/views/item/picture.js",
+            "type": "js"
+        },
+        "js/views/item/video.js": {
+            "uri": "/js/views/item/video.js",
+            "type": "js"
+        },
+        "js/views/main.js": {
+            "uri": "/js/views/main.js",
+            "type": "js"
+        },
+        "js/views/main/header.js": {
+            "uri": "/js/views/main/header.js",
+            "type": "js"
+        },
+        "js/views/main/newsDetail.js": {
+            "uri": "/js/views/main/newsDetail.js",
+            "type": "js"
+        },
+        "js/views/main/newsList.js": {
+            "uri": "/js/views/main/newsList.js",
+            "type": "js"
+        },
+        "js/views/main/pictureDetail.js": {
+            "uri": "/js/views/main/pictureDetail.js",
+            "type": "js"
+        },
+        "js/views/main/pictureList.js": {
+            "uri": "/js/views/main/pictureList.js",
+            "type": "js"
+        },
+        "js/views/main/videoList.js": {
+            "uri": "/js/views/main/videoList.js",
+            "type": "js"
+        }
+    },
+    "pkg": {}
+}
