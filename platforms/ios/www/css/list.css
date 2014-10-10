@@ -14,8 +14,8 @@
 */
 .news {
 	font-size: 14px;
-	background: white url(../images/biketo_loading.gif) 50% 50% no-repeat;
-	background-size: 35%;
+	/*background: white url(../images/biketo_loading.gif) 50% 50% no-repeat;*/
+	/*background-size: 35%;*/
 }
 .news .iScroll {
 	position: absolute;

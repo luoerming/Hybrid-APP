@@ -36,22 +36,7 @@
     // 默认值
     app.param = {
       // Modals
-      modalTemplate: '<div class="modal {{noButtons}}">' +
-                          '<div class="modal-inner">' +
-                              '{{if title}}<div class="modal-title">{{title}}</div>{{/if title}}' +
-                              '<div class="modal-text">{{text}}</div>' +
-                              '{{afterText}}' +
-                          '</div>' +
-                          '<div class="modal-buttons">{{buttons}}</div>' +
-                      '</div>',
-      modalActionsTemplate: '<div class="actions-modal">{{buttons}}</div>',
-      modalButtonOk: 'OK',
-      modalButtonCancel: 'Cancel',
-      modalUsernamePlaceholder: 'Username',
-      modalPasswordPlaceholder: 'Password',
-      modalTitle: 'Framework7',
-      modalCloseByOutside: false,
-      actionsCloseByOutside: true,
+      modalTemplate: '',
     };
 
     // 扩展默认参数
@@ -97,8 +82,16 @@
       }
 
       /// ... 考虑项目进度暂不编写该函数, 先使用原先的modal UI来使用，后期的扩展是，先判断如果应用已被打包（如：phoneGap）则使用原生自带的model UI，否则使用该方法内UI；
-
     }
+
+    // *** 显示加载状态 ***
+    app.showIndicator = function () {
+        $('body').append('<div class="preloader-indicator-overlay"></div><div class="preloader-indicator-modal"><span class="preloader preloader-white"></span></div>');
+    };
+
+    app.hideIndicator = function () {
+        $('.preloader-indicator-overlay, .preloader-indicator-modal').remove();
+    };
 
   };
 
@@ -113,7 +106,7 @@
           i = 0;
 
       // Create array-like object
-      for (i = 0; i < arr.length; i++) self[i] = att[i];
+      for (i = 0; i < arr.length; i++) self[i] = arr[i];
 
       self.length = arr.length;
 
@@ -142,21 +135,21 @@
           var els = (context || document).querySelectorAll(selector);
           for (i = 0; i < els.length; i++) arr.push(els[i]);
 
-          console.log('string :', selector);
+          // console.log('string :', selector);
         }
 
         // 否则如果是Node/element的类型
         else if (selector.nodeType || selector === window || selector === document) {
           arr.push(selector);
 
-          console.log('node/element: ', selector);
+          // console.log('node/element: ', selector);
         }
 
         // 否则如果是 Arry组合元素，或Dom的实例
         else if (selector.length > 0 && selector[0].nodeType) {
           for (i = 0; i < selector.length; i++) arr.push(selector[i]);
 
-          console.log('array: ', selector);
+          // console.log('array: ', selector);
         }
       }
 
@@ -214,11 +207,37 @@
 
       html: function(html) {},
 
-      append: function(newChild) {},
+      append: function(newChild) {
+        var i, j;
+        for (i = 0; i < this.length; i++) {
+            if (typeof newChild === 'string') {
+                var tempDiv = document.createElement('div');
+                tempDiv.innerHTML = newChild;
+                while (tempDiv.firstChild) {
+                    this[i].appendChild(tempDiv.firstChild);
+                }
+            }
+            else if (newChild instanceof Dom7) {
+                for (j = 0; j < newChild.length; j++) {
+                    this[i].appendChild(newChild[j]);
+                }
+            }
+            else {
+                this[i].appendChild(newChild);
+            }
+        }
+        return this;
+      },
 
       find: function(selector) {},
 
-      remove: function(selector) {},
+      // 移动元素
+      remove: function(selector) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i].parentNode) this[i].parentNode.removeChild(this[i]);
+        }
+        return this;
+      },
 
     };
 

@@ -49,23 +49,6 @@ define ([
 			});
 
 			this.pictureFavor(collection.models[0]);
-
-		},
-
-		/**
-		 * 文章收藏
-		 */
-		pictureFavor: function(model) {
-			var self = this;
-			var button = document.querySelector('#view-pictureDetail .icon-favor-wrap .icon-favor');
-			UserFavor.render('save', {
-				el: button, 
-				models: {
-					title: model.get('title'), 
-					cid: '120',
-					aid: self.aid
-				}
-			});
 		},
 
 	});

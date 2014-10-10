@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'iconfont';
-  src: url('http://at.alicdn.com/t/font_1411913869_0648315.eot'); /* IE9*/
-  src: url('http://at.alicdn.com/t/font_1411913869_0648315.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('http://at.alicdn.com/t/font_1411913869_0648315.woff') format('woff'), /* chrome、firefox */
-  url('http://at.alicdn.com/t/font_1411913869_0648315.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('http://at.alicdn.com/t/font_1411913869_0648315.svg#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('http://at.alicdn.com/t/font_1412856395_8808718.eot'); /* IE9*/
+  src: url('http://at.alicdn.com/t/font_1412856395_8808718.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('http://at.alicdn.com/t/font_1412856395_8808718.woff') format('woff'), /* chrome、firefox */
+  url('http://at.alicdn.com/t/font_1412856395_8808718.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('http://at.alicdn.com/t/font_1412856395_8808718.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
             
 .iconfont {
@@ -124,5 +124,26 @@
 /* 收藏夹 */
 .icon-favorAll:before {
   content: "\e60f";
+}
+
+
+/* 微信好友 */
+.icon-wecaht:before {
+  content: "\e611";
+  color: #6eb244;
+  font-size: 35px;
+}
+
+/* 微信朋友圈 */
+.icon-wecahtQuan:before {
+  content: "\e610";
+  color: #4dbea4;
+  font-size: 35px;
+}
+/* 复制连接 */
+.icon-copy:before {
+  content: "\e612";
+  color: #e9aa3b;
+  font-size: 35px;
 }
 

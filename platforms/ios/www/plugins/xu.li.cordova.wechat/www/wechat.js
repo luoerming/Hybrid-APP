@@ -42,6 +42,7 @@ module.exports = {
      * </code>
      */
     share: function (message, onSuccess, onError) {
+        console.log('cordova: ', message)
         exec(onSuccess, onError, "Wechat", "share", [message]);
     }
 };

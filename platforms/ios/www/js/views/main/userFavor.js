@@ -43,10 +43,7 @@ define ([
 
 		show: function() {
 			this.renderList();
-			
-
 			this.toggleDeleteItems();
-
 			this.fetchOnlineFavorData();
 		},
 
@@ -61,14 +58,12 @@ define ([
 			this.saveToLoclstorage();
 			
 			// this.syncAndMergeData();
-
 		},
 
 		// 尝试同步数据
 		syncAndMergeData: function() {
 
 			this._syncFavored ++;
-
 			
 			if (this._syncFavored > 1) {
 				return ;
@@ -130,7 +125,6 @@ define ([
 		},
 
 		saveToServer: function() {
-			
 			this.syncAndMergeData();
 		},
 

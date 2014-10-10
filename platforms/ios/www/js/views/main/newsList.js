@@ -144,6 +144,8 @@ define ([
 				$('.news .pullup').show()
 			}
 
+			this._isJump && myApp.showIndicator();
+
 			// 循环数据
 			data.each(function(model){
 				model.set('channelid', self._cid);
@@ -154,7 +156,10 @@ define ([
 			// 添加至DOM
 			self.$newsListScrollContent[(self._isJump || self._isCache) ? 'html' : 'append' ](liArr);
 			
-			this._isJump && this.NewsListScroll.scrollTo(0, -40, 0);
+			if (this._isJump) {
+				this.NewsListScroll.scrollTo(0, -40, 0);
+				myApp.hideIndicator();
+			} 
 
 			//数据加载完成后改变状态
 			self.NewsListScroll.refresh();

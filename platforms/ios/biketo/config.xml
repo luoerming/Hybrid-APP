@@ -2,8 +2,8 @@
 <widget id="com.magicCyclingMedia.BIKETO" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="BackupWebStorage" value="cloud" />
-    <preference name="DisallowOverscroll" value="false" />
+    <preference name="BackupWebStorage" value="local" />
+    <preference name="DisallowOverscroll" value="true" />
     <preference name="EnableViewportScale" value="false" />
     <preference name="FadeSplashScreen" value="true" />
     <preference name="FadeSplashScreenDuration" value=".25" />
@@ -16,10 +16,7 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-
-    <!-- 微信appid -->
     <preference name="wechatappid" value="wxfd30d569f7ecf665" />
-
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
@@ -44,5 +41,8 @@
     <feature name="Wechat">
         <param name="ios-package" value="CDVWechat" />
         <param name="onload" value="true" />
+    </feature>
+    <feature name="Clipboard">
+        <param name="ios-package" value="CDVClipboard" />
     </feature>
 </widget>

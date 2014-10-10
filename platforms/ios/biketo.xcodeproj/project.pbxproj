@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -48,6 +47,7 @@
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		D6F45C7019E555E400D2B1C9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F45C6D19E555E400D2B1C9 /* libWeChatSDK.a */; };
 		F649B50F3A5641DAB91179F4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E4617948534CBC83691BF7 /* MediaPlayer.framework */; };
+		57FC7289BED74F35ABC9F686 /* CDVClipboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 39100B638EF9484686720575 /* CDVClipboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +128,8 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F628E137DA404115B28FAC36 /* CDVNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = org.apache.cordova.dialogs/CDVNotification.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = biketo/config.xml; sourceTree = "<group>"; };
+		39100B638EF9484686720575 /* CDVClipboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVClipboard.m"; path = "com.verso.cordova.clipboard/CDVClipboard.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		0E7AF55F623E4C1CAC87267C /* CDVClipboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVClipboard.h"; path = "com.verso.cordova.clipboard/CDVClipboard.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,8 @@
 				E17090287D064183874F0AE3 /* CDVNotification.h */,
 				9C647193892246AD85B4BFED /* CDVWechat.m */,
 				67F6ACDB394A412BA0DFDE5E /* CDVWechat.h */,
+				39100B638EF9484686720575 /* CDVClipboard.m */,
+				0E7AF55F623E4C1CAC87267C /* CDVClipboard.h */,
 			);
 			name = Plugins;
 			path = biketo/Plugins;
@@ -467,6 +471,7 @@
 				2567CCCD767643068B13D08E /* UIWebViewExtension.m in Sources */,
 				3EFCF23B2E0741CCB4B0B14A /* CDVNotification.m in Sources */,
 				231DA4FA710E4652A0A31886 /* CDVWechat.m in Sources */,
+				57FC7289BED74F35ABC9F686 /* CDVClipboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,13 @@ module.exports = [
         "clobbers": [
             "Wechat"
         ]
+    },
+    {
+        "file": "plugins/com.verso.cordova.clipboard/www/clipboard.js",
+        "id": "com.verso.cordova.clipboard.Clipboard",
+        "clobbers": [
+            "cordova.plugins.clipboard"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -35,7 +42,8 @@ module.exports.metadata =
     "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
     "com.ionic.keyboard": "1.0.3",
     "org.apache.cordova.dialogs": "0.2.6",
-    "xu.li.cordova.wechat": "0.4"
+    "xu.li.cordova.wechat": "0.4",
+    "com.verso.cordova.clipboard": "0.1.0"
 }
 // BOTTOM OF METADATA
 });

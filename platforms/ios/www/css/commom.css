@@ -542,6 +542,177 @@ nav button#btn4.active .btn-icon{
 }
 
 /*---------------------------------------
+ * Modals
+ ---------------------------------------*/
+.modal-overlay,
+.preloader-indicator-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10600;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.modal-overlay.modal-overlay-visible,
+.preloader-indicator-overlay.modal-overlay-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Actions */
+.actions-modal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 11000;
+  width: 100%;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.actions-modal.modal-in {
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.actions-modal.modal-out {
+  z-index: 10999;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.actions-modal .actions-modal-group {
+  	display: -webkit-box;
+ 	display: -webkit-flex;
+  	display: flex;
+  	-webkit-box-pack: center;
+ 	 -webkit-justify-content: center;
+  	justify-content: center;
+  	-webkit-box-align: center;
+  	-webkit-align-items: center;
+  	align-items: center;
+  	background: white;
+  	height: 95px;
+}
+
+.actions-modal .actions-modal-group .actions-modal-button {
+	width: 33.3%;
+	text-align: center;
+	border-right: 1px solid #eee;
+}
+.actions-modal .actions-modal-group .actions-modal-button.action {
+	opacity: .4;
+}
+
+.actions-modal .actions-modal-group .actions-modal-button:active {
+	opacity: .4;
+}
+.actions-modal .actions-modal-group .actions-modal-button .actions-modal-button-text {
+	font-size: 14px;
+	line-height: 24px;
+	opacity: .8;
+}
+.actions-modal .actions-modal-group .actions-modal-button:last-child {
+	border: none;
+}
+
+/* Preloader */
+.preloader-indicator-overlay {
+  visibility: visible;
+  opacity: 0;
+  background: none;
+}
+.preloader-indicator-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 8px;
+  margin-left: -25px;
+  margin-top: -25px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 11000;
+  border-radius: 5px;
+}
+.preloader-indicator-modal .preloader {
+  display: block;
+  width: 34px;
+  height: 34px;
+}
+
+
+/*---------------------------------------
+ * Preloader animate icon
+ ---------------------------------------*/
+.preloader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-animation: preloader-spin 1s step-end infinite;
+  animation: preloader-spin 1s step-end infinite;
+}
+.preloader:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><line id='l' x1='60' x2='60' y1='7' y2='27' stroke='%236c6c6c' stroke-width='11' stroke-linecap='round'/></defs><g><use xlink:href='%23l' opacity='.27'/><use xlink:href='%23l' opacity='.27' transform='rotate(30 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(60 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(90 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(120 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(150 60,60)'/><use xlink:href='%23l' opacity='.37' transform='rotate(180 60,60)'/><use xlink:href='%23l' opacity='.46' transform='rotate(210 60,60)'/><use xlink:href='%23l' opacity='.56' transform='rotate(240 60,60)'/><use xlink:href='%23l' opacity='.66' transform='rotate(270 60,60)'/><use xlink:href='%23l' opacity='.75' transform='rotate(300 60,60)'/><use xlink:href='%23l' opacity='.85' transform='rotate(330 60,60)'/></g></svg>");
+  background-position: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.preloader-white:after {
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><line id='l' x1='60' x2='60' y1='7' y2='27' stroke='%23fff' stroke-width='11' stroke-linecap='round'/></defs><g><use xlink:href='%23l' opacity='.27'/><use xlink:href='%23l' opacity='.27' transform='rotate(30 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(60 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(90 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(120 60,60)'/><use xlink:href='%23l' opacity='.27' transform='rotate(150 60,60)'/><use xlink:href='%23l' opacity='.37' transform='rotate(180 60,60)'/><use xlink:href='%23l' opacity='.46' transform='rotate(210 60,60)'/><use xlink:href='%23l' opacity='.56' transform='rotate(240 60,60)'/><use xlink:href='%23l' opacity='.66' transform='rotate(270 60,60)'/><use xlink:href='%23l' opacity='.75' transform='rotate(300 60,60)'/><use xlink:href='%23l' opacity='.85' transform='rotate(330 60,60)'/></g></svg>");
+}
+@-webkit-keyframes preloader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  8.33333333% {
+    -webkit-transform: rotate(30deg);
+  }
+  16.66666667% {
+    -webkit-transform: rotate(60deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+  33.33333333% {
+    -webkit-transform: rotate(120deg);
+  }
+  41.66666667% {
+    -webkit-transform: rotate(150deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  58.33333333% {
+    -webkit-transform: rotate(210deg);
+  }
+  66.66666667% {
+    -webkit-transform: rotate(240deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+  }
+  83.33333333% {
+    -webkit-transform: rotate(300deg);
+  }
+  91.66666667% {
+    -webkit-transform: rotate(330deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/*---------------------------------------
  * delete list items
  ---------------------------------------*/
 .delete-items {

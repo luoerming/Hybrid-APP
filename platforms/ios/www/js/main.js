@@ -47,13 +47,18 @@ require(['cordova', 'cordovaPlugin', 'app'], function (cordova, cordovaPlugin, a
     // Expose Internal Dom library
     $$ = window.Dom;
     
+    myApp = new btFramework();
+
     app.initialize();
     
 });
 
 // require(['app'], function (app) {
+    
 //     // Expose Internal Dom library
 //     $$ = window.Dom;
-    
+
+//     myApp = new btFramework();
+
 //     app.initialize();
 // });

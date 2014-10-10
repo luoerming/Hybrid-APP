@@ -67,7 +67,8 @@ define (['namespace'], function(Global) {
 
         // if value's doesn't exist, set viewport status
 	    if (getActionURL && vIn.id === 'view-newsDetail') {
-	    	vIn.querySelector('.loading').style.display = 'block';
+	    	// vIn.querySelector('.loading').style.display = 'block';
+	    	myApp.showIndicator();
 	    	vIn.querySelector('.content').innerHTML = '';
 	    }
 

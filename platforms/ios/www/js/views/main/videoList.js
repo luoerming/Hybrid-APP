@@ -151,16 +151,25 @@ define ([
 		},
 
 		unfoldToggle: function() {
-			var self = this,
-				unfold = this.$el.querySelector('.unfold-toggle'),
-				items = unfold.querySelectorAll('.item-content'),
-				title = unfold.querySelector('.unfold-toggle-title'),
-				extend = this.$el.querySelector('.extend'),
-				nav = document.querySelector('nav');
+			var self = this;
+			var unfold = this.$el.querySelector('.unfold-toggle');
+			var items = unfold.querySelectorAll('.item-content');
+			var title = unfold.querySelector('.unfold-toggle-title');
+			var extend = this.$el.querySelector('.extend');
+			var nav = document.querySelector('nav');
 
 			function active() {
 				var hasClass = unfold.classList.contains('active');
-				(hasClass) ? unfold.classList.remove('active') : unfold.classList.add('active');
+
+				if (hasClass) {
+					unfold.classList.remove('active');
+					self.$el.scrollContainer.classList.add('fadeIn');
+				}
+				else {
+					unfold.classList.add('active');
+					self.$el.scrollContainer.classList.remove('fadeIn');
+				}
+				setTimeout(function(){ self.$el.scrollContainer.classList.remove('fadeIn') }, 1000)
 			}
 
 			function action() {

@@ -39,6 +39,10 @@
                         {
                             "xml": "<feature name=\"Wechat\"><param name=\"ios-package\" value=\"CDVWechat\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Clipboard\"><param name=\"ios-package\" value=\"CDVClipboard\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -56,6 +60,9 @@
             "PACKAGE_NAME": "com.magicCyclingMedia.BIKETO"
         },
         "xu.li.cordova.wechat": {
+            "PACKAGE_NAME": "com.magicCyclingMedia.BIKETO"
+        },
+        "com.verso.cordova.clipboard": {
             "PACKAGE_NAME": "com.magicCyclingMedia.BIKETO"
         }
     },

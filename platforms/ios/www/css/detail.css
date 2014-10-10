@@ -102,6 +102,10 @@
 }
 #view-newsDetail header .button-wrap .iconfont {
 	color: black;
+	display: block;
+}
+#view-newsDetail header .button-wrap .iconfont:active {
+	opacity: .5;
 }
 
 #view-newsDetail .scroll {

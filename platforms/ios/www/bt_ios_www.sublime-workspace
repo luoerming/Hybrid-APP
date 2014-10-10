@@ -4,6 +4,78 @@
 		"selected_items":
 		[
 			[
+				"_i",
+				"_isTips"
+			],
+			[
+				"ref",
+				"refresh"
+			],
+			[
+				"fa",
+				"false"
+			],
+			[
+				"cl",
+				"classList"
+			],
+			[
+				"ex",
+				"exSlide"
+			],
+			[
+				"class",
+				"classid"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"inner",
+				"innerHTML"
+			],
+			[
+				"in",
+				"innerText"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"login",
+				"loginButton"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"item",
+				"items"
+			],
+			[
+				"cla",
+				"classList"
+			],
+			[
+				"qu",
+				"querySelectorAll"
+			],
+			[
+				"news",
+				"newsSlider"
+			],
+			[
+				"data",
+				"data-action"
+			],
+			[
+				"set",
+				"setAttribute"
+			],
+			[
 				"submibu",
 				"submitButtonValidatorFunc"
 			],
@@ -84,20 +156,8 @@
 				"margin"
 			],
 			[
-				"class",
-				"classList"
-			],
-			[
 				"unfo",
 				"unfold"
-			],
-			[
-				"qu",
-				"querySelector"
-			],
-			[
-				"padd",
-				"padding"
 			],
 			[
 				"rg",
@@ -106,10 +166,6 @@
 			[
 				"CORO",
 				"cordovaMain"
-			],
-			[
-				"inner",
-				"innerText"
 			],
 			[
 				"hei",
@@ -122,10 +178,6 @@
 			[
 				"padding-to",
 				"padding-top"
-			],
-			[
-				"item",
-				"itemsContainer"
 			],
 			[
 				"que",
@@ -208,20 +260,8 @@
 				"pictureDetailSql"
 			],
 			[
-				"cla",
-				"classid"
-			],
-			[
-				"news",
-				"newstime"
-			],
-			[
 				"clas",
 				"classname"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"list",
@@ -280,10 +320,6 @@
 				"renderAll"
 			],
 			[
-				"cl",
-				"classList"
-			],
-			[
 				"opt",
 				"opts"
 			],
@@ -314,10 +350,6 @@
 			[
 				"inn",
 				"inline-block"
-			],
-			[
-				"fa",
-				"fadeIn"
 			],
 			[
 				"cal",
@@ -432,10 +464,6 @@
 				"length"
 			],
 			[
-				"data",
-				"dataList"
-			],
-			[
 				"fi",
 				"fixationW"
 			],
@@ -486,39 +514,43 @@
 			[
 				"da",
 				"dragMe"
-			],
-			[
-				"app",
-				"appUI"
-			],
-			[
-				"mo",
-				"morepic"
-			],
-			[
-				"var",
-				"var_dump"
-			],
-			[
-				"pi",
-				"pictureList"
-			],
-			[
-				"bor",
-				"border"
-			],
-			[
-				"qur",
-				"querySelector"
-			],
-			[
-				"tab",
-				"tabLi"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/luoerming/Documents/git/bt_cordova/platforms/ios/www/js/libs/cordova/main.js",
+			"settings":
+			{
+				"buffer_size": 883,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 1554,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/luoerming/Documents/git/bt_cordova_ios/biketo/platforms/ios/www/index.html",
+			"settings":
+			{
+				"buffer_size": 770,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/luoerming/Documents/git/bt_cordova_ios/biketo/platforms/ios/www/js/app.js",
+			"settings":
+			{
+				"buffer_size": 460,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -596,10 +628,50 @@
 	"expanded_folders":
 	[
 		"/Users/luoerming/Documents/git/bt_ios_www",
-		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/modules/mobile"
+		"/Users/luoerming/Documents/git/bt_cordova_ios",
+		"/Users/luoerming/Documents/git/bt_cordova_ios/biketo",
+		"/Users/luoerming/Documents/git/bt_cordova_ios/biketo/platforms",
+		"/Users/luoerming/Documents/git/bt_cordova_ios/biketo/platforms/ios",
+		"/Users/luoerming/Documents/git/bt_cordova_ios/biketo/platforms/ios/www",
+		"/Users/luoerming/Documents/git/bt_cordova_ios/biketo/platforms/ios/www/js"
 	],
 	"file_history":
 	[
+		"/Users/luoerming/Documents/git/bt_cordova/platforms/ios/HelloCordova/config.xml",
+		"/Users/luoerming/Documents/git/Example-cordova/wechat2/platforms/ios/www/js/main.js",
+		"/Users/luoerming/Documents/git/bt_cordova/platforms/ios/www/js/libs/cordova/cordova_plugins.js",
+		"/Users/luoerming/Documents/git/bt_cordova/plugins/org.apache.cordova.dialogs/doc/index.md",
+		"/Users/luoerming/Documents/git/Example-cordova/wechat2/platforms/ios/wechat2/config.xml",
+		"/Users/luoerming/Documents/git/bt_cordova/platforms/ios/www/js/libs/cordova/wechat.js",
+		"/Users/luoerming/Documents/git/bt_cordova/platforms/ios/www/js/main.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/main.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/views/main/memberCenter.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/app.js",
+		"/Users/luoerming/Documents/git/bt_cordova/platforms/ios/www/js/views/main/videoList.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/views/main/newsList.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/views/main/userLogin.js",
+		"/Users/luoerming/Documents/git/bt_cordova/platforms/ios/www/js/app.js",
+		"/Users/luoerming/Documents/git/bt_cordova/platforms/ios/www/index.html",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/views/main/newsList_old.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/templates/member.html",
+		"/Users/luoerming/Documents/git/bt_ios_www/templates/login.html",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/libs/extend/ui.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/css/detail.css",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/libs/iscroll/5.0/iscroll.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/css/list.css",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/views/main/header.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/views/main/pictureList.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/templates/videoList.html",
+		"/Users/luoerming/Documents/git/bt_ios_www/css/commom.css",
+		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/modules/mobile/lib/userDefinedFunc.php",
+		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/modules/mobile/mobile.php",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/router.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/css/slider.css",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/views/main/videoList.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/libs/iscroll/iscrollAssist.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/templates/newsList.html",
+		"/Users/luoerming/Documents/git/bt_ios_www/js/libs/extend/slider.js",
+		"/Users/luoerming/Documents/git/bt_ios_www/templates/pictureList.html",
 		"/Users/luoerming/Documents/git/UI/Framework7/kitchen-sink/js/kitchen-sink.js",
 		"/Users/luoerming/Documents/git/UI/Framework7/build/js/framework7.js",
 		"/Users/luoerming/Documents/git/UI/Framework7/src/js/dom7-methods.js",
@@ -659,7 +731,6 @@
 		"/Users/luoerming/Documents/git/biketo/ios/js/views/app.js",
 		"/Users/luoerming/Documents/git/biketo/ios/js/router.js",
 		"/Users/luoerming/Documents/git/biketo/ios/js/app.js",
-		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/modules/mobile/mobile.php",
 		"/Users/luoerming/Documents/git/biketo/ios/css/lib/iconfont.css",
 		"/Users/luoerming/Documents/git/biketo/ios/css/detail.css",
 		"/Users/luoerming/Documents/git/biketo/ios/css/commom.css",
@@ -668,7 +739,6 @@
 		"/Users/luoerming/Desktop/base64.jpg",
 		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/model/appuser.php",
 		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/modules/login/login.php",
-		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/modules/mobile/lib/userDefinedFunc.php",
 		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/e/member/class/user.php",
 		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/class/appbase.php",
 		"/Users/luoerming/Documents/www/biketo_v7ecms_2014/app/modules/imagecache/imagecache.php",
@@ -694,50 +764,18 @@
 		"/Users/luoerming/Documents/git/biketo/ios/templates/videoList.html",
 		"/Users/luoerming/Documents/git/biketo/ios/templates/item/videoItem.html",
 		"/Users/luoerming/Documents/git/biketo/ios/index.html",
-		"/Users/luoerming/Documents/git/biketo/ios/templates/pictureList.html",
-		"/Users/luoerming/Documents/git/biketo/ios/templates/newsList.html",
-		"/Users/luoerming/Documents/git/biketo/ios/css/lib/ios7-ui-translate.css",
-		"/Users/luoerming/Documents/phoneGap/phonegap-weixin-plugin/cordovaPluginInSwift/src/ios/CDV-Bridging-Header.h",
-		"/Users/luoerming/Documents/phoneGap/phonegap-weixin-plugin/cordovaPluginInSwift/www/CDVpluginInswift.js",
-		"/Users/luoerming/Documents/git/biketo/cordova/biketo/platforms/ios/www/css/commom.css",
-		"/Users/luoerming/Documents/git/biketo/cordova/biketo/platforms/ios/www/js/views/main/videoList.js",
-		"/Users/luoerming/Documents/git/biketo/cordova/biketo/platforms/ios/www/index.html",
-		"/Users/luoerming/Documents/git/biketo/cordova/biketo/platforms/ios/www/js/libs/cordova/cordova_plugins.js",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/css/list.css",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/templates/item/videoItem.html",
-		"/Users/luoerming/Documents/git/biketo/ios/css/slider.css",
-		"/Users/luoerming/Documents/git/biketo/ios/css/animate.css",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/www/index.html",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/js/views/main/videoList.js",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/css/main.css",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/css/lib/iconfont.css",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/js/views/main/newsDetail.js",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/js/main.js",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/platforms/ios/www/index.html",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/index.html",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/platforms/ios/www/css/main.css",
-		"/Users/luoerming/Documents/phoneGap/phonegap-plugin-testing/Canvas2ImageDemo/platforms/ios/www/index.html",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/platforms/ios/www/js/main.js",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/platforms/ios/www.back/js/main.js",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/platforms/ios/www/cordova/cordova.js",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/platforms/ios/www/cordova_plugins.js",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/platforms/ios/www/StreamingMedia.js",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/js/libs/flowplayer/5.4.3/flowplayer.js",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/templates/member.html",
-		"/Users/luoerming/Documents/phoneGap/playVideoTest/platforms/ios/www.back/js/views/main/videoList.js",
-		"/Users/luoerming/Documents/phoneGap/weixinApi/plugins/ios.json",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/css/commom.css",
-		"/Users/luoerming/Documents/phoneGap/biketo-android/www/css/lib/ios7-ui-translate.css"
+		"/Users/luoerming/Documents/git/biketo/ios/templates/pictureList.html"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/luoerming/Documents/git/bt_ios_www",
 			"/Users/luoerming/Documents/git/UI/Framework7/kitchen-sink",
 			"/Users/luoerming/Documents/git/UI/Framework7",
 			"/Users/luoerming/Documents/www/biketo_v7ecms_2014/",
@@ -772,6 +810,44 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$newsList",
+			"$newsList ",
+			"$newsList",
+			"newsListScrollContent",
+			"scrollWrap",
+			"newsListScroll",
+			"render",
+			"renderAll",
+			"newsListScroll",
+			"iScroll",
+			"Iscroll",
+			"iScroll",
+			"cache",
+			"render",
+			"loginButtonHandler",
+			"isShowLoginPage",
+			"iScrollIndicator",
+			"loginPageOutHandler",
+			"submitButton",
+			"clearHtmlTag",
+			"pictureScroll",
+			"console",
+			"popin",
+			"hader",
+			"_isTips",
+			"add",
+			"class",
+			"fadeOut",
+			"newsSwitchTabs",
+			"videoListScroll",
+			"this.scroll",
+			"$",
+			"on(",
+			"on",
+			"loading",
+			"ui-loading",
+			"uiLodingAnimation",
+			"pictureScroll",
 			"break-all",
 			"navbarInitCallback",
 			"animateNavBackIcon",
@@ -861,45 +937,7 @@
 			"load",
 			" toUTF8",
 			"toUTF8",
-			"userjsonp",
-			"jsonp",
-			"translate",
-			"WXApiDelegate",
-			"open",
-			"WXApi",
-			"openWeixin",
-			"action",
-			"fastclick",
-			"active",
-			"action",
-			"__plain",
-			"__plain_text_READY__",
-			"loading_opt.gif",
-			"/images",
-			"image-loading.png",
-			"/images",
-			"biketo_loading.gif",
-			"biketo_loading.gif ",
-			"'/images",
-			".png",
-			"/images",
-			"initFlowplayer",
-			"cordova",
-			"FALSE",
-			"_isCache",
-			"renderAll",
-			"refershFull",
-			"scrollWrap",
-			"scrollContainer",
-			"flowplayer",
-			"playlist",
-			"load",
-			".so",
-			"load",
-			"this.flowplayer",
-			"layoutlayoutRatio",
-			"iScroll",
-			"refresh"
+			"userjsonp"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -946,8 +984,366 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/luoerming/Documents/git/bt_cordova/platforms/ios/www/js/libs/cordova/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								883,
+								883
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1193,
+								1193
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/luoerming/Documents/git/bt_cordova_ios/biketo/platforms/ios/www/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 770,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								763,
+								763
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/luoerming/Documents/git/bt_cordova_ios/biketo/platforms/ios/www/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								332,
+								332
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1076,7 +1472,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 202.0,
+	"side_bar_width": 345.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
