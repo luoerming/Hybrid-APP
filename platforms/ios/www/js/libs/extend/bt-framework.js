@@ -86,11 +86,13 @@
 
     // *** 显示加载状态 ***
     app.showIndicator = function () {
-        $('body').append('<div class="preloader-indicator-overlay"></div><div class="preloader-indicator-modal"><span class="preloader preloader-white"></span></div>');
+        // $('body').append('<div class="preloader-indicator-overlay"></div><div class="preloader-indicator-modal"><span class="preloader preloader-white"></span></div>');
+        $('body').append('<div class="preloader-indicator-modal"><span class="preloader preloader-white"></span></div>');
     };
 
     app.hideIndicator = function () {
         $('.preloader-indicator-overlay, .preloader-indicator-modal').remove();
+        $('.preloader-indicator-modal').remove();
     };
 
   };

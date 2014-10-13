@@ -69,7 +69,8 @@ define (['namespace'], function(Global) {
 	    if (getActionURL && vIn.id === 'view-newsDetail') {
 	    	// vIn.querySelector('.loading').style.display = 'block';
 	    	myApp.showIndicator();
-	    	vIn.querySelector('.content').innerHTML = '';
+	    	vIn.querySelector('.scroll .content').innerHTML = '';
+	    	vIn.querySelector('header .icon-favor-wrap .icon-favor').classList.remove('checked');
 	    }
 
 	   	// set view in return URL

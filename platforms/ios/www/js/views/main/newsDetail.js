@@ -22,7 +22,7 @@ define ([
 			return escape.value;
 		},
 
-		render: function(cid, aid) {
+		render: function(classid, id) {
 			this.$el = document.querySelector('#view-newsDetail');
 			this.$vOut = document.querySelector('section.active');
 
@@ -36,7 +36,7 @@ define ([
 			this.model = new NewsDetaillModel();
 			this.model.fetch({
 				cache: true,
-				url: Global.app.opts.url + 'a=render&classid=' + cid + '&aid=' +aid
+				url: Global.app.opts.url + 'a=render&classid=' + classid + '&id=' +id
 			});
 
 			this.model.listenTo(this.model, 'sync', _.bind(this.renderAll, this));
@@ -63,7 +63,7 @@ define ([
 
 		/**
 		 * 文章分享
-		 * @return {[type]} [description]
+		 * @return {[Array]} 当前模型数据
 		 */
 		articleShare: function(model) {
 
@@ -251,6 +251,7 @@ define ([
 
 		/**
 		 * 文章收藏
+		 * @return {[Array]} 当前模型数据
 		 */
 		newsFavor: function(model) {
 			var button = document.querySelector('#view-newsDetail .icon-favor-wrap .icon-favor');
@@ -258,8 +259,8 @@ define ([
 				el: button, 
 				models: {
 					title: model.get('title'), 
-					cid: model.get('classid'),
-					aid: model.get('id')
+					classid: model.get('classid'),
+					id: model.get('id')
 				}
 			});
 		},

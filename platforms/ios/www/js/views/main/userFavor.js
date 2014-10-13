@@ -13,7 +13,10 @@ define ([
 	var UserFavorListView = Backbone.View.extend({
 
 		initialize: function() {
+
 			this._syncFavored = 0;
+
+			this._isSyncd = false;
 		},
 
 		render: function(method, argObject) {
@@ -38,41 +41,46 @@ define ([
 		},
 
 		save: function() {
-			!(UserLogin.isLoginFunc()) ? this.fetchOfflineFavorDate() : this.fetchOnlineFavorData();
+			// If the user is not logged 
+			!(UserLogin.isLoginFunc()) ? this.userNotLoggedFavorDate() : this.userIsLoggedFavorData();
 		},
 
 		show: function() {
 			this.renderList();
 			this.toggleDeleteItems();
-			this.fetchOnlineFavorData();
+
+			// 这里要判断同步的状态是否已同步过，如果已同步步跳过； isSyncd = true;
+			if (!this._isSyncd) !(UserLogin.isLoginFunc()) ? this.userNotLoggedFavorDate() : this.userIsLoggedFavorData();
 		},
 
-		fetchOfflineFavorDate: function() {
-			console.log('offline');
-			// this.saveToLoclstorage();
-		},
-
-		fetchOnlineFavorData: function() {
-			console.log('online');
-			// this.saveToServer();
+		// User is not logged.
+		userNotLoggedFavorDate: function() {
+			console.log('Not logged: 未登录');
 			this.saveToLoclstorage();
-			
-			// this.syncAndMergeData();
 		},
 
-		// 尝试同步数据
-		syncAndMergeData: function() {
+		// User is logged.
+		userIsLoggedFavorData: function() {
+			console.log('Is logged: 已登录');
+			this.saveToLoclstorage();
+			this.trySyncAndMergeData();
+		},
 
-			this._syncFavored ++;
-			
-			if (this._syncFavored > 1) {
-				return ;
-			}
-
+		// Trying to sync from local data or server data.
+		trySyncAndMergeData: function() {
 			var self = this;
+
+			if (self._isSyncd) return;
+
 			var storeFavor = (WebStorage.get().favor === '0') ? [] : WebStorage.get().favor;
 			var storeUserinfo = WebStorage.get().userinfo;
 
+			// To jsaonString
+			var favorDataToJSON = [];
+			for (var i = 0; i < storeFavor.length; i++) {
+				var reDate = {classid: storeFavor[i].classid, id: storeFavor[i].id};
+				favorDataToJSON.push(reDate)
+			};
 
 			// 合并两个对象方法
 			var merge = function() {
@@ -90,7 +98,12 @@ define ([
 			    return obj;
 			};
 
-			var url = '&token=' + storeUserinfo.token + '&username=' + storeUserinfo.username + '&userid=' + storeUserinfo.userid;
+			if (favorDataToJSON.length > 150) {
+				alert('您的数据超过150条限制无法完成同步操作!');
+				return;
+			}
+
+			var url = '&token=' + storeUserinfo.token + '&username=' + storeUserinfo.username + '&userid=' + storeUserinfo.userid + '&data=' + JSON.stringify(favorDataToJSON);
 			$$.ajax({
 				url: Global.app.opts.url + 'a=setMemberFavor' + url,
 				type: "post", //请求类型,可为get或post
@@ -100,11 +113,13 @@ define ([
 
 			// callback
 			function ajaxCallback(response) {
+
+				console.log(response)
+				return;
 				var responseParse = JSON.parse(response);
 
 				// 成功
 				if (responseParse.code === '20000') {
-
 					var serverFavorList = responseParse.favorList;
 					var localAndServerMerge = merge(serverFavorList, storeFavor);
 				
@@ -112,12 +127,18 @@ define ([
 						storeFavor.push(localAndServerMerge[i]);
 					}
 					// 替换本地
-					WebStorage.set({'favor': storeFavor });
+					WebStorage.set({'favor': storeFavor});
 					self.renderList();
 
+					// 设置已同步同步状态
+					self._isSyncd = true;
+
 				}
+
 				// token错误
-				if (responseParse.code === '40002') {
+				if (responseParse.code === '40001') {
+					// 退出登录
+					UserLogin.logoutFunc();
 					console.log('token错误');
 				}
 			};
@@ -125,28 +146,30 @@ define ([
 		},
 
 		saveToServer: function() {
-			this.syncAndMergeData();
+			this.trySyncAndMergeData();
 		},
 
 		saveToLoclstorage: function() {
-			var self = this,
-				args = self.args,
-				saveButton = args.el,
-				models = args.models,
-				storageValue = (WebStorage.get().favor === '0') ? [] : WebStorage.get().favor,
-				tips = document.querySelector('.commom-tips'),
-				tipsIcon = tips.querySelector('.iconfont'),
-				tipsText = tips.querySelector('.text');
-			if (!saveButton) { return; };
+			var self = this;
+			var args = self.args;
+			var saveButton = args.el;
+			var models = args.models;
+			var storageValue = (WebStorage.get().favor === '0') ? [] : WebStorage.get().favor;
+			var tips = document.querySelector('.commom-tips');
+			var tipsIcon = tips.querySelector('.iconfont');
+			var tipsText = tips.querySelector('.text');
+
+			if (!saveButton) return;
+
 			// Set button's style
-			(_.some(storageValue, function(v) { return v.aid === models.aid })) ? 
+			(_.some(storageValue, function(v) { return v.id === models.id })) ? 
 			saveButton.classList.add('checked') : 
 			saveButton.classList.remove('checked');
 
 			var submitFavorFunc = function() {
 
 				// If localStorage key value doesn't exist.
-				if (!_.some(storageValue, function(v) { return v.aid === models.aid })) {
+				if (!_.some(storageValue, function(v) { return v.id === models.id })) {
 					storageValue.push(models);
 					WebStorage.set({'favor': storageValue});
 
@@ -155,7 +178,7 @@ define ([
 					tipsText.innerHTML = '收藏成功';
 				}
 				else {
-					storageValue = _.filter(storageValue, function(v) { return v.aid !== models.aid });
+					storageValue = _.filter(storageValue, function(v) { return v.id !== models.id });
 					WebStorage.set({'favor': storageValue});
 
 					saveButton.classList.remove('checked');
@@ -178,7 +201,7 @@ define ([
 				storageCollection = WebStorage.get().favor,
 				_arrayLi = [], _i;
 
-			if (storageCollection.length <= 0) {
+			if (storageCollection === '0') {
 				self.$el.favorList.parentNode.classList.add('favorListPlaceholder');
 				self.$el.favorList.innerHTML = '<i class="iconfont icon-favorAll"></i><p>时光已飞逝那些重要的事？<br>收藏它们吧</p>';
 				return;
@@ -191,11 +214,14 @@ define ([
 				var itemView = new FavorItemView({model: storageCollection[_i]});
 				 _arrayLi.push(itemView.render().el.innerHTML);
 			}
+
 			self.$el.favorList.innerHTML = _arrayLi.join('');
-			// bind appui
+
+			// Bind the UI
 			AppUI.memberContentFavorList(self.$el.favorList.querySelectorAll('li'));
 		},
 
+		// Delete favorList function
 		toggleDeleteItems: function() {
 			var self = this;
 			self._instance;
@@ -235,21 +261,22 @@ define ([
 			};
 
 			fn.removeStoreFavor = function() {
-				
-				var isConfirm = confirm("你确定要取消收藏 ？");
+				var self = this;
+				var storage = WebStorage.get().favor || [];
+				var getActionURL = self.parentNode.getAttribute('data-action');
+				var id = getActionURL.split('/')[2];
 
-				if (isConfirm == true) {
-					var storage = WebStorage.get().favor || [],
-						getActionURL = this.parentNode.getAttribute('data-action'),
-						aid = getActionURL.split('/')[2];
-					reStorageValue = _.filter(storage, function(v){ return v.aid != aid });
+				var resultCallback = function(re) {
+					if (re !== 2) return;
+					reStorageValue = _.filter(storage, function(v){ return v.id != id });
 					WebStorage.set({'favor': reStorageValue});
-					console.log(aid, '已取消收藏');
-					this.parentNode.classList.add('removed');
-					var self = this;
+					self.parentNode.classList.add('removed');
 					setTimeout(function(){self.parentNode.style.display = 'none';}, 1000);
-				} 
-				else { return; };
+
+					// debug
+					console.log(id,' :已取消收藏');
+				}
+				window.navigator.notification.confirm("你确定要取消收藏？111", resultCallback, "", ["取消", "确定"]);
 			};
 
 			fn.listenerNavEvent = function() {
