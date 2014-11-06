@@ -11,7 +11,7 @@ define ([
 
 		initialize: function() {
 			this.passwordErrorCount = 0;
-			this.isLoginFunc();
+			// this.isLoginFunc();
 		},
 		
 		render: function() {
@@ -30,7 +30,7 @@ define ([
 			this.$memberEl.memberViewLoginHeader = this.$memberEl.querySelector('.member-header-wrapper');
 
 			this.listenerNativeKeybordEvent();
-			this.$el.submitButton.addEventListener('click', _.bind(this.submitButtonValidatorFunc, this), false);
+			$(this.$el.submitButton).off().on('click', _.bind(this.submitButtonValidatorFunc, this));
 		},
 
 		showMemberView: function() {
@@ -45,6 +45,8 @@ define ([
 
 			self.$memberEl.memberViewLoginHeader.removeEventListener('click', AppUI.exSlide, false);
 			self.$memberEl.memberViewLoginHeader.classList.add('logged');
+
+			$$(document).trigger('logged');
 		},
 
 		// listener ios or android Native event
@@ -63,15 +65,15 @@ define ([
 			var self = this,
 				userNamelValue = self.$el.userNameInput.value,
 				passwordValue = self.$el.passwordInput.value;
-			
-			console.log('ok')
+				
 			// show tips wrapper
 			this.$el.tipsWrap.classList.contains('hidden') && this.$el.tipsWrap.classList.remove('hidden')
 
 			// show tips text 
 			if (userNamelValue.length > 2 && passwordValue.length > 5) {
 				self.$el.submitButton.disabled = self.$el.userNameInput.disabled = self.$el.passwordInput.disabled = true;
-				self.$el.submitButton.innerHTML = '登录中请稍后 ...';
+				// self.$el.submitButton.innerHTML = '登录中请稍后 ...';
+				myApp.showIndicator();
 				self.postServerValidatorFunc(userNamelValue, passwordValue);
 			}
 			else {
@@ -116,6 +118,7 @@ define ([
 						self.$el.loginTipsText.innerText = '登录中...';
 						self.setUserTokenFunc(responseParse);
 						self.showMemberView();
+						// console.log(responseParse)
 					}
 					// 用户不存在
 					if (responseParse.code === '40001') {
@@ -162,7 +165,8 @@ define ([
 
 		logoutFunc: function() {
 			WebStorage.set({'userinfo': '0'});
-			console.log('logouted ....', WebStorage.get().userinfo, (WebStorage.get().userinfo === '0'))
+			console.log('logouted ....');
+			$$(document).trigger('logouted');
 		},
 
 	});

@@ -13,7 +13,7 @@ define ([
 	var VideoView = Backbone.View.extend({
 
 		initialize: function() {
-			this._isCache = this._isTips = this._isJump = false; 
+			this._isCache = this._isTips = this._isJump = this._initData = false; 
 			this._page = 1;
 			this._cid = 121;
 
@@ -43,9 +43,10 @@ define ([
 			// 更新缓存数据
 			(this._isCache) && this.updateCache( opts.url );
 
-			// 获取数据
-			this.collection.fetch( opts );
-
+			if (this._isJump || !this._initData) {
+				myApp.showIndicator();
+				this._initData = true;
+			}
 		},
 
 		initScroll: function() {
@@ -58,18 +59,15 @@ define ([
  			this._page = 1;
  			this._isJump = this._isCache = true;
  			this.render();
+ 			myApp.hideIndicator();
 		},
 
 		// 上拉执行逻辑 （下一页）
 		pullupAction : function () {
 			var self = this;
-			// var items = self.$el.scrollContainer.querySelectorAll('.item');
-			// for (var i = 0; i < items.length; i++) items[i].classList.remove('fadeIn');
-
 			self._isJump = false;
 			self._page ++;
 			self.render();
-			console.log('this._cid: ',self._cid, 'this._page',self._cid, 'next page');
 		},
 
 		renderDataAll: function(collection) {
@@ -94,42 +92,56 @@ define ([
 				videoListScroll.scrollTo( 0, -44, 0 );
 				self.$el.scrollContainer.innerHTML = '加载中请慢等 》。。。。';
 				self.$el.scrollContainer.innerHTML = itemArr.join(' ');
-				// var items = self.$el.scrollContainer.querySelectorAll('.item');
-				// for (var i = 0; i < items.length; i++) items[i].classList.add('fadeIn');
 			}
 			else { self.$el.scrollContainer.innerHTML += itemArr.join(' '); }
 
 			//数据加载完成后改变状态
-			videoListScroll.refresh();  
+			videoListScroll.refresh();
+
+			myApp.hideIndicator();
 
 		},
 
 		playerVideo: function() {
 			var self = this;
+			var isVideo = false;
 			var listenerItem = self.$el.scrollContainer.querySelectorAll('.item dl dt .videoDatas');
 			var onClickItem = function() {
 				var _me = this;
 				var thisSrcValue = _me.getAttribute('data-src');
-				$.getJSON('http://api.flvxz.com/token/5ac2fec5ad4c305dce09a3301a0f4ad2/url/'+ thisSrcValue +'/jsonp/purejson/quality/6auY5riF', function(json) {
+				$.getJSON('http://api.flvxz.com/token/5ac2fec5ad4c305dce09a3301a0f4ad2/url/'+ thisSrcValue +'/jsonp/purejson/ftype/mp4/hd/2', function(json) {
 					var src = json[0].files[0].furl;
 					_me.setAttribute('src', src);
 				})
-				.done(_.bind(player, this));
+				.done( _.bind(player, this) );
 			}
 			var player = function () {
+				isVideo = true;
                 var videoUrl = this.getAttribute('src');
                 var options = {
                     successCallback: function() {
-                      console.log('播放完成没有任何错误')
+                      console.log('播放完成没有任何错误');
+                      isVideo = false;
                     },
                     errorCallback: function(errMsg) {
                       console.log("Error! " + errMsg);
+                      isVideo = false;
                     }
                 };
-                window.plugins.streamingMedia.playVideo(videoUrl, options);
-                console.log('youku-videoUrl: ',videoUrl);
+                try {
+                	window.plugins.streamingMedia.playVideo(videoUrl, options);
+                } catch (err) {
+                	console.log('youku-videoUrl: ',videoUrl, 'err: ', err);
+                	isVideo = false
+                }
 			}
-			for (var i = 0; i < listenerItem.length; i++) listenerItem[i].addEventListener('click', onClickItem, false);
+
+			var delegateHandle = function() {
+				var self = this;
+				if (!isVideo) onClickItem.call(self);
+			}
+
+			$(self.$el).delegate('.videoDatas', 'click', _.debounce(delegateHandle, 500) );
 		},
 
 		moreDetail: function() {
@@ -159,17 +171,7 @@ define ([
 			var nav = document.querySelector('nav');
 
 			function active() {
-				var hasClass = unfold.classList.contains('active');
-
-				if (hasClass) {
-					unfold.classList.remove('active');
-					self.$el.scrollContainer.classList.add('fadeIn');
-				}
-				else {
-					unfold.classList.add('active');
-					self.$el.scrollContainer.classList.remove('fadeIn');
-				}
-				setTimeout(function(){ self.$el.scrollContainer.classList.remove('fadeIn') }, 1000)
+				(unfold.classList.contains('active')) ? unfold.classList.remove('active') : unfold.classList.add('active');
 			}
 
 			function action() {

@@ -21,7 +21,7 @@ define ([
 			this.aid = aid;
 			this.collection.fetch({
 				reset: true,
-				cache: false,
+				cache: true,
 				expires: 3000,
 				url: Global.app.opts.url + 'a=render&classid=' + 120 + '&aid=' + aid 
 			});

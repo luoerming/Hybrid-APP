@@ -24,12 +24,13 @@ define ([
 			this._isTips = false; // 判断是否显示提示
 			this._page = 1;
 			this._cid = 1;
+			this._initData = false;
 
 			this.listenToOnce(this.collection, 'reset', this.newsListScroll); // 初始化iscroll (仅一次)
 			this.listenTo(this.collection, 'reset', this.slider); // 渲染幻灯片数据 
 
 			this.listenTo(this.collection, 'reset', this.renderAll); // 渲染列表数据 	
-			
+		
 		},
 
 		render: function(cid, page) {
@@ -58,9 +59,11 @@ define ([
 			this.collection.fetch(opts);
 
 			// 更新缓存数据
-			if (this._isCache) {
-				this.updateCache(Global.app.opts.url + 'a=render&classid=' + this._cid + '&page');
-				// this.slider();
+			if (this._isCache) this.updateCache(Global.app.opts.url + 'a=render&classid=' + this._cid + '&page');
+
+			if (this._isJump || !this._initData && !this._isJump) {
+				myApp.showIndicator();
+				this._initData = true;
 			}
 
 		},
@@ -118,7 +121,8 @@ define ([
 			var self = this;
 			self._isCache = self._isTips = true;
 			self._page = 1;
-			self.render( WebStorage.get().classId, this._page);
+			self.render(WebStorage.get().classId, this._page);
+			myApp.hideIndicator();
 		},
 
 		// 上拉执行逻辑 （下一页）
@@ -143,9 +147,7 @@ define ([
 			} else {
 				$('.news .pullup').show()
 			}
-
-			this._isJump && myApp.showIndicator();
-
+			
 			// 循环数据
 			data.each(function(model){
 				model.set('channelid', self._cid);
@@ -156,16 +158,17 @@ define ([
 			// 添加至DOM
 			self.$newsListScrollContent[(self._isJump || self._isCache) ? 'html' : 'append' ](liArr);
 			
-			if (this._isJump) {
-				this.NewsListScroll.scrollTo(0, -40, 0);
-				myApp.hideIndicator();
+			if (self._isJump) {
+				self.NewsListScroll.scrollTo(0, -40, 0);
 			} 
+
+			myApp.hideIndicator();
 
 			//数据加载完成后改变状态
 			self.NewsListScroll.refresh();
 
 			// 提示信息
-			this.tips();
+			self.tips();
 		},
 
 		// 更新缓存数据

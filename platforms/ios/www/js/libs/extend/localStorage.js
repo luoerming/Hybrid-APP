@@ -11,11 +11,15 @@ define (function() {
 		(!newValue.classId ) && (newValue.classId = oldValue.classId);
 		(!newValue.favor ) && (newValue.favor = oldValue.favor);
 		(!newValue.userinfo ) && (newValue.userinfo = oldValue.userinfo);
+		(!newValue.fontsize ) && (newValue.fontsize = oldValue.fontsize);
+		(!newValue.switchNight ) && (newValue.switchNight = oldValue.switchNight);
 
 		var obj = { 
 			'classId' : newValue.classId || '0', 
 			'favor' : newValue.favor || '0', 
 			'userinfo' : newValue.userinfo || '0', 
+			'fontsize' : newValue.fontsize || '16', 
+			'switchNight' : newValue.switchNight || 'false', 
 		};
 
 		localStorage.setItem('biketo', JSON.stringify(obj));

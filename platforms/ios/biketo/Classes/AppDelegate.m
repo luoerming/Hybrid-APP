@@ -91,6 +91,11 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+
+}
+
 // this happens while we are running ( in the background, or from within our own app )
 // only valid if biketo-Info.plist specifies a protocol to handle
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation

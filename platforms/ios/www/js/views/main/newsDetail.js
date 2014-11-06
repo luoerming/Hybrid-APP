@@ -26,6 +26,8 @@ define ([
 			this.$el = document.querySelector('#view-newsDetail');
 			this.$vOut = document.querySelector('section.active');
 
+			this.$actionComment = this.$el.querySelector('#view-newsDetail header button.icon-comment-wrap');
+
 			this.$vOut.classList.toggle('active');
 			this.$vOut.classList.add('hidden');
 			this.$el.classList.remove('hidden');
@@ -41,6 +43,7 @@ define ([
 
 			this.model.listenTo(this.model, 'sync', _.bind(this.renderAll, this));
 			this.model.listenTo(this.model, 'sync', _.bind(this.newsFavor, this));
+			this.model.listenTo(this.model, 'sync', _.bind(this.articleComment, this));
 			this.model.listenTo(this.model, 'sync', _.bind(this.articleShare, this));
 		},
 
@@ -48,16 +51,22 @@ define ([
 			var self = this;
 			var newstext = model.get('newstext').replace(/(\[!--empirenews.page--\])/g, '').replace(/(img src)/g, 'img data-src');
 			var container = document.querySelector('#view-newsDetail .content');
-			var objStr = {
+			var containerTempData = {
 				title: model.get('title'),
 				newstext: newstext,
 				diggtop: model.get('diggtop'),
 				newstime: model.get('newstime'),
-				classname: model.get('classname')
+				classname: model.get('classname'),
 			};
-
+			var headerCommentTempData = {
+				classid: model.get('classid'),
+				id: model.get('id')
+			};
 			container.innerHTML.scrollTop = 0;
-			container.innerHTML = _.template(self.template(), objStr);
+			container.style.fontSize = WebStorage.get().fontsize +'px';
+			container.innerHTML = _.template(self.template(), containerTempData);
+			this.$actionComment.setAttribute('data-action', '#comment/' + model.get('classid') + '/' + model.get('id'));
+			this.$actionComment.setAttribute('data-return', '#list/'+ model.get('classid')+'/'+model.get('id'));
 			myApp.hideIndicator();
 		},
 
@@ -170,7 +179,7 @@ define ([
 
      			function (reason) {
      			    var success = function() {};
-					window.navigator.notification.alert("", success, "成功失败！");
+					window.navigator.notification.alert("", success, "分享失败！");
      			    clickModalOverlayHandle();
      			});
 
@@ -263,6 +272,14 @@ define ([
 					id: model.get('id')
 				}
 			});
+		},
+
+		/**
+		 * 文章评论
+		 * @return {[Number]} 当前文章ID
+		 */
+		articleComment: function(id) {
+			// var button = document.querySelector('#view-newsDetail .icon-comment-wrap');
 		},
 
 		fixNewsText: function() {

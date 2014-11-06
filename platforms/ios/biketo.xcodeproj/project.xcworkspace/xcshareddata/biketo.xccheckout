@@ -10,6 +10,8 @@
 	<string>biketo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>8CCA3661D97639C58D3AECF2F0E17D6D42832F0D</key>
+		<string>https://github.com/luoerming/bt_ios_www.git</string>
 		<key>B03F89E322F7E178C5C23BF9BE2964CC71042ECD</key>
 		<string>https://github.com/luoerming/bt_cordova_ios.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>platforms/ios/biketo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>8CCA3661D97639C58D3AECF2F0E17D6D42832F0D</key>
+		<string>../../../../platforms/ios/www</string>
 		<key>B03F89E322F7E178C5C23BF9BE2964CC71042ECD</key>
 		<string>../../../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>B03F89E322F7E178C5C23BF9BE2964CC71042ECD</string>
 			<key>IDESourceControlWCCName</key>
 			<string>bt_cordova_ios</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8CCA3661D97639C58D3AECF2F0E17D6D42832F0D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>www</string>
 		</dict>
 	</array>
 </dict>

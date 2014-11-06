@@ -4,23 +4,33 @@ define ([
 	'underscore',
 	'backbone',
 
+	// javascript view
 	'views/main/newsDetail', 
 	'views/main/newsList', 
-
 	'views/main/pictureList', 
 	'views/main/pictureDetail',
-
 	'views/main/videoList',
 	'views/main/memberCenter',
+	'views/main/userFavor',
+	'views/main/comment',
+	'views/main/commentAdd',
+	'views/main/myComment',
 
+	// html template view
 	'text!templates/newsList.html',
 	'text!templates/newsDetail.html',
-
 	'text!templates/pictureList.html',
 	'text!templates/pictureDetail.html',
-
 	'text!templates/videoList.html',
 	'text!templates/member.html',
+	'text!templates/favor.html',
+	'text!templates/comment.html',
+	'text!templates/commentAdd.html',
+	'text!templates/articleFontSize.html',
+	'text!templates/aboutBiketo.html',
+	'text!templates/team.html',
+	'text!templates/aboutUs.html',
+	'text!templates/myComment.html',
 	'text!templates/login.html',
 	'text!templates/nav.html'
 ], function(
@@ -28,27 +38,34 @@ define ([
 	_, 
 	Backbone, 
 
+	// javascript view
 	NewsDetail, 
 	NewsList, 
-
 	PictureList, 
 	PictureDetail, 
-
 	VideoList, 
 	MemberCenter,
+	Favor,
+	Comment,
+	CommentAdd,
+	MyComment,
 
+	// html template view
 	NewsListTpl, 
 	NewsDetailTpl, 
-
 	PictureListTpl, 
 	PictureDetailTpl, 
-
 	VideoListTpl, 
-
 	MemberTpl, 
-
+	FavorTpl,
+	CommentTpl, 
+	CommentAddTpl, 
+	ArticleFontSizeTpl,
+	AboutBiketoTpl,
+	TeamTpl,
+	AboutUsTpl,
+	MyCommentTpl,
 	LoginTpl,
-
 	NavTpl
 	) {
 
@@ -65,6 +82,14 @@ define ([
 				PictureDetailTpl,
 				// 会员中心，登录
 				MemberTpl,
+				FavorTpl,
+				CommentTpl,
+				CommentAddTpl,
+				ArticleFontSizeTpl,
+				AboutBiketoTpl,
+				TeamTpl,
+				AboutUsTpl,
+				MyCommentTpl,
 				LoginTpl,
 				// 全局导航
 				NavTpl);
@@ -96,6 +121,22 @@ define ([
 
 		showMemberCenter: function() {
 			MemberCenter.render();
+		},
+
+		showFavor: function() {
+			Favor.render('show');
+		},
+
+		showComment: function(classid, articleid) {
+			Comment.render(classid, articleid);
+		},
+
+		showAddComment: function(classid, plid) {
+			CommentAdd.render(classid, plid);
+		},
+
+		showMyComment: function() {
+			MyComment.render();
 		}
 
 	});

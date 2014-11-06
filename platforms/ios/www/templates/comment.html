@@ -1,0 +1,41 @@
+<!-- 文章评论  -->
+<section id="view-comment" class="hidden">
+	<header>
+		<div class="topBar"></div>
+		<h1 class="nav">全部评论</h1>
+		<div class="button-wrap">
+			<div class="button-left-wrap">
+				<button class="onBind" data-vin="view-newsDetail" data-sd="sr"><div class="label"><i class="iconfont icon-back"></i></div></button>
+			</div>
+			<div class="button-right-wrap">	
+				<button class="button-right--comment" data-vin="view-comment-add" data-sd="popin" data-isNav="true" ><div class="toggle-delete-items">评论</div></button>
+			</div>
+		</div>
+	</header>
+	<div class="scrollMask"></div>
+	<div class="scrollWrap">
+		<div class="scroll comment">
+			<div class="title-inner">
+				<div class="title-text">最新评论</div>
+			</div>
+			<div class="content">
+				<div class="comment-item">
+					<div class="comment-avatar-inner">
+						<div class="comment-avatar-picture">
+							<i class="iconfont icon-member-profile-picture"></i>
+						</div>
+					</div>
+					<div class="comment-item-inner">
+						<div class="comment-item-userName"><%= userName %></div>
+						<div class="comment-item-time">30分钟前</div>
+						<div class="comment-item-content">这是一条评论，没当过特点队不对可惜特点队不对啊！</div>
+						<div class="comment-sub-item">
+							<div class="comment-ding">顶</div>
+							<div class="comment-ding">回复</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

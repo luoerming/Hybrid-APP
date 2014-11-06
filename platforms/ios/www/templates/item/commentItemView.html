@@ -1,0 +1,13 @@
+<div class="comment-avatar-inner">
+	<div class="comment-avatar-picture">
+		<!-- <i class="iconfont icon-member-profile-picture"></i> -->
+		<img src="http://ucbike0.biketo.com/avatar.php?uid=<%= userid %>&size=small" >
+	</div>
+</div>
+<div class="comment-item-inner">
+	<div class="comment-item-userName"><%= username %></div>
+	<div class="comment-item-time"><%= saytime %></div>
+	<div class="comment-item-content"><%= quoteUserName ? '回复 '+quoteUserName+ ' : ' : '' %> <%= saytext %></div>
+	<div class="comment-item-zcnum <%= (zcnum != 0) ? 'zcnum-overlay-visible' : '' %>"><span class="comment-item-zcnum-text"><%= zcnum %></span> 赞</div>
+</div>
+<%= articleTitle ? '<div data-vin="view-newsDetail" data-sd="sl" data-action="#list/'+classid+'/'+aid+'" data-return="#myComment" data-vin-return="#myComment" data-isnav="false" class="comment-item-articleTitle">原文：' +articleTitle+ '</div>' : '' %>

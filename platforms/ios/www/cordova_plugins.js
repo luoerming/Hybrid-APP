@@ -34,6 +34,14 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.clipboard"
         ]
+    },
+    {
+        "file": "plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js",
+        "id": "de.appplant.cordova.plugin.email-composer.EmailComposer",
+        "clobbers": [
+            "cordova.plugins.email",
+            "plugin.email"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -43,7 +51,8 @@ module.exports.metadata =
     "com.ionic.keyboard": "1.0.3",
     "org.apache.cordova.dialogs": "0.2.6",
     "xu.li.cordova.wechat": "0.4",
-    "com.verso.cordova.clipboard": "0.1.0"
+    "com.verso.cordova.clipboard": "0.1.0",
+    "de.appplant.cordova.plugin.email-composer": "0.8.2dev"
 }
 // BOTTOM OF METADATA
 });

@@ -14,13 +14,17 @@
 */
 .news {
 	font-size: 14px;
-	/*background: white url(../images/biketo_loading.gif) 50% 50% no-repeat;*/
-	/*background-size: 35%;*/
 }
 .news .iScroll {
 	position: absolute;
 }
-.news .iScroll .content .item {}
+.news .iScroll .content .item {
+	transition: background-color 0.2s linear, color 0.2s linear;
+}
+.news .iScroll .content .item:active {
+	color: rgb(66, 66, 66);
+	background: rgb(243, 243, 243);
+}
 .news .iScroll .content .item a {
 	display: block;
 }
@@ -34,19 +38,15 @@
 	display: flex;
 	line-height: 22px;
 	border-bottom: 1px solid rgba(226, 226, 226, 0.37);
-	background: white;
 	margin: 0 8px;
-	padding:4px 0;
+	padding:8px 0;
 }
-.news .iScroll .content .item-content:active {
-	background: rgb(243, 243, 243);
-	transition: background-color 0.2s linear, color 0.2s linear;
-}
+
 .news .iScroll .content .item-content .item-media {
 	width: 26%;
 	min-width: 26%;
 	max-width: 26%;
-	height: auto;
+	height: 57px;
 	margin-right: 10px;
 	margin-top: 3px;
 	flex-grow: 0;
@@ -60,7 +60,7 @@
 .news .iScroll .content .item-content .item-media img {
 	width: 100%;
 	overflow: hidden;
-	/*height: 80px;*/
+	width: 100%;
 }
 .news .iScroll .content .item-content .item-inner .item-title {
 	display: -webkit-box;
@@ -98,7 +98,6 @@
 	float: left;
 	width: 100%;
 	height: 100%;
-	background:url(../images/biketo_loading.gif) center no-repeat;
 	background-size: 120px;
 }
 
@@ -171,7 +170,6 @@
 	float: left;
 	width: 100%;
 	height: 100%; 
-	background:url(../images/biketo_loading.gif) center no-repeat;
 	background-size: 120px;
 }
 .video .iscroll .content {
@@ -189,7 +187,7 @@
 	line-height: 200px;
 	text-align: center;
 	overflow: hidden;
-	background:url(../images/image-loading.png) center no-repeat;
+	background: #f8f8f8;
 }
 .video .item dl dt .videoDatas .icon-play {
 	font-size: 3.5em;
@@ -208,7 +206,7 @@
 	line-height: 22px;
 	color: rgb(73, 73, 73);
 	text-align: justify;
-	font-size: 12px;
+	font-size: 14px;
 }
  /*more-detail 查看详情*/
 .video .more-detail {

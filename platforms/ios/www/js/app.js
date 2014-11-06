@@ -7,6 +7,7 @@ define ([
 	'namespace'
 ], function(_, Backbone, AppRoute, AppView, Global ) {
 	var initialize = function() {
+		AppView.render();
 		Global.app = {
 			appRouter: AppRoute,
 			opts: {

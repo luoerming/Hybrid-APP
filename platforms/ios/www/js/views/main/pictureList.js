@@ -41,6 +41,8 @@ define ([
 
 			// 获取数据
 			this.collection.fetch( opts );
+
+			if (!this._isCache) myApp.showIndicator();
 		},
 
 		// 初始iscroll插件
@@ -62,6 +64,7 @@ define ([
 			this._isCache = _isJump = false;
 			this._page ++;
 			this.render();
+			myApp.hideIndicator()
 		},
 
 		// 渲染数据
@@ -93,6 +96,8 @@ define ([
 			
 			// 提示信息
 			this.tips();
+
+			myApp.hideIndicator();
 
 		},
 

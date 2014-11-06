@@ -6,16 +6,20 @@ define ([
 	'webStorage',
 	'views/main',
 	'views/main/header',
-	'appUI'
+	'appUI',
 ], function($, _, Backbone, WebStorage, MainView, Header, AppUI) {
 
 	var AppRoute = Backbone.Router.extend({
 		routes: {
 			'': 'viewNewsList',
-			'list/:id': 'viewNewsList',
+			'list/:classid': 'viewNewsList',
+			'list/:classid/:aid': 'viewNewsDetail',
 			'video': 'viewVideoList',
 			'member': 'viewMemberCenter',
-			'list/:id/:aid': 'viewNewsDetail'
+			'favor': 'viewFavor',
+			'comment/:classid/:articleid': 'viewComment',
+			'comment/:classid/:plid/add': 'viewAddComment',
+			'myComment': 'viewMyComment'
 		},
 		initialize: function() {
 			WebStorage.set({'classId': 1});
@@ -50,6 +54,24 @@ define ([
 		viewMemberCenter: function() {
 			AppUI.showSwitchTabs(3);
 			MainView.showMemberCenter();
+		},
+
+		viewFavor: function() {
+			// AppUI.showSwitchTabs(4);
+			MainView.showFavor();
+		},
+
+		viewComment: function(classid, articleid) {
+			MainView.showComment(classid, articleid);
+		},
+
+		viewAddComment: function(classid, plid, str) {
+			MainView.showAddComment(classid, plid);
+		},
+
+		viewMyComment: function() {
+			MainView.showMyComment();
+			console.log('approute myComment')
 		}
 
 	})

@@ -29,6 +29,7 @@
 		30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FC414816E50CA1004E6F35 /* icon-72@2x.png */; };
 		3EFCF23B2E0741CCB4B0B14A /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E137DA404115B28FAC36 /* CDVNotification.m */; };
 		48DF518A47EE4629A87D9090 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01623C8565814545A017E1A8 /* CDVNotification.bundle */; };
+		57FC7289BED74F35ABC9F686 /* CDVClipboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 39100B638EF9484686720575 /* CDVClipboard.m */; };
 		5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEE5B34173C68D80009041E /* CoreLocation.framework */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		7E7966DE1810823500FA85AD /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D41810823500FA85AD /* icon-40.png */; };
@@ -47,7 +48,8 @@
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		D6F45C7019E555E400D2B1C9 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F45C6D19E555E400D2B1C9 /* libWeChatSDK.a */; };
 		F649B50F3A5641DAB91179F4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E4617948534CBC83691BF7 /* MediaPlayer.framework */; };
-		57FC7289BED74F35ABC9F686 /* CDVClipboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 39100B638EF9484686720575 /* CDVClipboard.m */; };
+		802D3E7FAACA487E82CA088C /* APPEmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75B1B5FE8446FB8BB2A09F /* APPEmailComposer.m */; };
+		3FE9160EFC40419C96F8CA03 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F503B5BFAD874CAE96D375DA /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		01623C8565814545A017E1A8 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CDVNotification.bundle; sourceTree = "<group>"; };
+		0E7AF55F623E4C1CAC87267C /* CDVClipboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVClipboard.h; path = com.verso.cordova.clipboard/CDVClipboard.h; sourceTree = "<group>"; };
 		14D87BA839D74099A2D4D91F /* UIWebViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIWebViewExtension.m; path = com.ionic.keyboard/UIWebViewExtension.m; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 		30A0434714DC770100060A13 /* se */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = se; path = Localizable.strings; sourceTree = "<group>"; };
 		30FC414816E50CA1004E6F35 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* biketo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "biketo-Prefix.pch"; sourceTree = "<group>"; };
+		39100B638EF9484686720575 /* CDVClipboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVClipboard.m; path = com.verso.cordova.clipboard/CDVClipboard.m; sourceTree = "<group>"; };
 		510B077589E947D59EAD7501 /* StreamingMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StreamingMedia.m; path = com.hutchind.cordova.plugins.streamingmedia/StreamingMedia.m; sourceTree = "<group>"; };
 		5AEE5B34173C68D80009041E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -128,8 +132,9 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F628E137DA404115B28FAC36 /* CDVNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = org.apache.cordova.dialogs/CDVNotification.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = biketo/config.xml; sourceTree = "<group>"; };
-		39100B638EF9484686720575 /* CDVClipboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVClipboard.m"; path = "com.verso.cordova.clipboard/CDVClipboard.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		0E7AF55F623E4C1CAC87267C /* CDVClipboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVClipboard.h"; path = "com.verso.cordova.clipboard/CDVClipboard.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		EA75B1B5FE8446FB8BB2A09F /* APPEmailComposer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "APPEmailComposer.m"; path = "de.appplant.cordova.plugin.email-composer/APPEmailComposer.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		433A74C760914B0E8FBACBD7 /* APPEmailComposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "APPEmailComposer.h"; path = "de.appplant.cordova.plugin.email-composer/APPEmailComposer.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		F503B5BFAD874CAE96D375DA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +150,7 @@
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
 				F649B50F3A5641DAB91179F4 /* MediaPlayer.framework in Frameworks */,
 				7FF543F341AB47519561E47D /* AudioToolbox.framework in Frameworks */,
+				3FE9160EFC40419C96F8CA03 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +250,7 @@
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				C2E4617948534CBC83691BF7 /* MediaPlayer.framework */,
 				5CBC4D5E3308424488B2F817 /* AudioToolbox.framework */,
+				F503B5BFAD874CAE96D375DA /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -271,6 +278,8 @@
 				67F6ACDB394A412BA0DFDE5E /* CDVWechat.h */,
 				39100B638EF9484686720575 /* CDVClipboard.m */,
 				0E7AF55F623E4C1CAC87267C /* CDVClipboard.h */,
+				EA75B1B5FE8446FB8BB2A09F /* APPEmailComposer.m */,
+				433A74C760914B0E8FBACBD7 /* APPEmailComposer.h */,
 			);
 			name = Plugins;
 			path = biketo/Plugins;
@@ -365,6 +374,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = P5892AZFMM;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "biketo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -472,6 +486,7 @@
 				3EFCF23B2E0741CCB4B0B14A /* CDVNotification.m in Sources */,
 				231DA4FA710E4652A0A31886 /* CDVWechat.m in Sources */,
 				57FC7289BED74F35ABC9F686 /* CDVClipboard.m in Sources */,
+				802D3E7FAACA487E82CA088C /* APPEmailComposer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +541,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -554,7 +571,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = biketo;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -563,6 +581,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "biketo/biketo-Prefix.pch";
@@ -589,7 +609,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = biketo;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

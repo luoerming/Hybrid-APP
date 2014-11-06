@@ -45,4 +45,7 @@
     <feature name="Clipboard">
         <param name="ios-package" value="CDVClipboard" />
     </feature>
+    <feature name="EmailComposer">
+        <param name="ios-package" value="APPEmailComposer" />
+    </feature>
 </widget>
