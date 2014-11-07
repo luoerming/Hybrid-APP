@@ -34,23 +34,11 @@ define ([
 			$$(document)[0].addEventListener('logouted', _.bind(this.updateLoginStatus, this, false), false);
 			$$(document)[0].addEventListener('logged', _.bind(this.updateLoginStatus, this, true), false);
 			UserLogin.isLoginFunc() ? this.updateLoginStatus(true) : this.updateLoginStatus(false);
-
-			// initialize userFavorList 
-			// UsrFavorList.render('show', {});
-			
+		
 			// initialize UserLogin
 			UserLogin.render();
 
-			// listener button event's
-			// var onLogoutHandle = function() {
-			// 	UserLogin.logoutFunc();
-			// 	UsrFavorList.render('show', {});
-			// }
-			// this.$el.logoutButton.addEventListener('click', onLogoutHandle, false);
-
 			_.once(this.initClicaks());
-
-			console.log('MemberCenter render ...')
 
 		},
 
@@ -207,7 +195,7 @@ define ([
 				sendMail: function() {
 					var tipsText = '检测到您并没有配置邮箱, 请打开系统设置 》邮箱 》添加邮件（或联系:carol@biketo.com）';
 					var resultCallback = function() {};
-					cordova.plugins.email.isAvailable(function (valu) { 
+					cordova.plugins.email.isAvailable(function (valu) {
 						if (valu) {
 							cordova.plugins.email.open({
 							    to: 'carol@biketo.com',
@@ -215,12 +203,11 @@ define ([
 							    bcc: [],
 							    subject: '',
 							    body: ''
-							});						
+							});
 						} else {
 							window.navigator.notification.alert("", resultCallback, tipsText);
 						}
 					});
-					console.log('send initialize .....')
 				},
 
 			}

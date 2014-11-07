@@ -165,7 +165,7 @@ define (['hammer'], function(Hammer) {
 				// hammer.on("pan panend", Hammer.bindFn(this.onPan, this));
 				this.ticking = true;
 			}
-
+			
 		},
 
 		updateElementTransform: function() {

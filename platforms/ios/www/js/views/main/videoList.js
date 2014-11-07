@@ -116,32 +116,37 @@ define ([
 				.done( _.bind(player, this) );
 			}
 			var player = function () {
+				var self = this;
 				isVideo = true;
                 var videoUrl = this.getAttribute('src');
                 var options = {
                     successCallback: function() {
                       console.log('播放完成没有任何错误');
                       isVideo = false;
+                      $(self).removeClass('loading');
                     },
                     errorCallback: function(errMsg) {
                       console.log("Error! " + errMsg);
                       isVideo = false;
+                      $(self).removeClass('loading');
                     }
                 };
                 try {
                 	window.plugins.streamingMedia.playVideo(videoUrl, options);
                 } catch (err) {
                 	console.log('youku-videoUrl: ',videoUrl, 'err: ', err);
-                	isVideo = false
+                	isVideo = false;
+                	$(self).removeClass('loading');
                 }
 			}
 
 			var delegateHandle = function() {
 				var self = this;
 				if (!isVideo) onClickItem.call(self);
+				$(self).addClass('loading');
 			}
 
-			$(self.$el).delegate('.videoDatas', 'click', _.debounce(delegateHandle, 500) );
+			$(self.$el).undelegate().delegate('.videoDatas', 'click', _.debounce(delegateHandle, 300) );
 		},
 
 		moreDetail: function() {

@@ -13,7 +13,6 @@ define ([
 	'views/main/memberCenter',
 	'views/main/userFavor',
 	'views/main/comment',
-	'views/main/commentAdd',
 	'views/main/myComment',
 
 	// html template view
@@ -47,7 +46,6 @@ define ([
 	MemberCenter,
 	Favor,
 	Comment,
-	CommentAdd,
 	MyComment,
 
 	// html template view
@@ -129,10 +127,6 @@ define ([
 
 		showComment: function(classid, articleid) {
 			Comment.render(classid, articleid);
-		},
-
-		showAddComment: function(classid, plid) {
-			CommentAdd.render(classid, plid);
 		},
 
 		showMyComment: function() {

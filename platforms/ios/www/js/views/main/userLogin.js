@@ -52,20 +52,34 @@ define ([
 		// listener ios or android Native event
 		listenerNativeKeybordEvent: function() {
 			var self = this;
-			var moveLoginEl = self.$el.querySelector('.login');
-			var keyboardHideHandler = function() {
-				moveLoginEl.style.marginTop = '0px';
+			var clicksHandle = function(e) {
+
+				// You pressed enter!
+				if (e.which == 13) cordova.plugins.Keyboard.close(true);
+				 $(self.$el).find('.scrollWrap').css('margin-top','-110px');
+				// console.log(this);
+				try {
+					window.addEventListener('native.keyboardhide', keyboardHideHandler);
+				} catch (err) {
+					console.log(err);
+					$(window).trigger('native.keyboardshow');
+				}
+				function keyboardHideHandler(e){
+					console.log('hide')
+				    $(self.$el).find('.scrollWrap').css('margin-top','0');
+				}
 			}
-			var keyboardShowHandler = function() {
-				(self.$el.tipsWrap.contains('hidden')) ? moveLoginEl.style.marginTop = '-45px' : moveLoginEl.style.marginTop = '-50px';
-			}
+
+			$(self.$el).undelegate().delegate('input', 'focus keyup keyup', clicksHandle);
 		},
 
-		submitButtonValidatorFunc: function() {
+		submitButtonValidatorFunc: function(e) {
 			var self = this,
 				userNamelValue = self.$el.userNameInput.value,
 				passwordValue = self.$el.passwordInput.value;
-				
+			
+			console.log(e)
+
 			// show tips wrapper
 			this.$el.tipsWrap.classList.contains('hidden') && this.$el.tipsWrap.classList.remove('hidden')
 
@@ -93,6 +107,7 @@ define ([
 					self.$el.passwordInput.focus();
 					self.$el.loginTipsText.innerHTML = '密码小于6位数';
 				}
+				self.$el.querySelector('.scrollWrap').style.marginTop = '-110px';
 			}
 
 			// toggle tips className 
@@ -118,6 +133,12 @@ define ([
 						self.$el.loginTipsText.innerText = '登录中...';
 						self.setUserTokenFunc(responseParse);
 						self.showMemberView();
+
+						setTimeout(function(){
+							self.$el.loginTipsText.parentNode.classList.add('hidden');
+							self.$el.userNameInput.value = '';
+							self.$el.passwordInput.value = '';
+						}, 300)
 						// console.log(responseParse)
 					}
 					// 用户不存在
@@ -137,13 +158,16 @@ define ([
 					}
 					self.$el.submitButton.disabled = self.$el.userNameInput.disabled = self.$el.passwordInput.disabled = false;
 					self.$el.submitButton.innerHTML = '登 录';
+					myApp.hideIndicator();
 				}
 			});
 		},
 
 		// listenerKeybordFunc: function(e) {
 		// 	var self = this;
-		// 	(self.$el.userNameInput.value.length < 3 || self.$el.passwordInput.value.length < 6) ? self.$el.submitButton.disabled = true : self.$el.submitButton.disabled = false;
+		// 	// (self.$el.userNameInput.value.length < 3 || self.$el.passwordInput.value.length < 6) ? self.$el.submitButton.disabled = true : self.$el.submitButton.disabled = false;
+
+		// 	console.log('You pressed enter!')
 		// },
 
 		userEmailValidatorFunc: function(emailString) {

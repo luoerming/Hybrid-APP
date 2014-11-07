@@ -128,7 +128,9 @@ define ([
 					share.classList.remove('modal-in');
 					share.classList.add('modal-out');
 					setTimeout(function(){
-						document.body.removeChild(share);
+						try {
+							document.body.removeChild(share)
+						} catch (err) {};
 					},300);
 				}
 				shareWeChat.addEventListener('click', _.bind(clickShareWeChatBtnHandle, self, shareWeChat), false);

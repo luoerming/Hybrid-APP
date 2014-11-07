@@ -241,6 +241,10 @@
 #view-member .member .member-shortcut .member-shortcut-item:last-child {
 	border-right: none;
 }
+#view-member .member .member-shortcut .member-shortcut-item:active {
+	opacity: .5;
+}
+
 #view-member .member .member-shortcut .member-shortcut-item.view-favor .icon-favor:before,
 #view-member .member .member-shortcut .member-shortcut-item.view-comment .icon-comment:before,
 #view-member .member .member-shortcut .member-shortcut-item.view-feedback .icon-feedback:before {
@@ -393,12 +397,19 @@
 }
 #view-login header {
 	background: white;
+	z-index: 1;
 }
 #view-login button.login-right-close {
 	padding:3px 3px 3px 15px;
 }
 #view-login button.login-right-close:active {
 	opacity: .5;
+}
+#view-login .scrollWrap {
+	 -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+	 -webkit-transform: translate3d(0, 0, 0);
+	 transform: translate3d(0, 0, 0);
 }
 #view-login .login {
 	transition-duration: 300ms;
@@ -440,7 +451,7 @@
 #view-login .login-right-close {
 	position: absolute;
 	right: 15px;
-	top: 15px;
+	top: 24px;
 	z-index: 2;
 	font-size: 14px;
 }

@@ -42,6 +42,13 @@ module.exports = [
             "cordova.plugins.email",
             "plugin.email"
         ]
+    },
+    {
+        "file": "plugins/org.devgeeks.Canvas2ImagePlugin/www/Canvas2ImagePlugin.js",
+        "id": "org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin",
+        "clobbers": [
+            "window.canvas2ImagePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -52,7 +59,8 @@ module.exports.metadata =
     "org.apache.cordova.dialogs": "0.2.6",
     "xu.li.cordova.wechat": "0.4",
     "com.verso.cordova.clipboard": "0.1.0",
-    "de.appplant.cordova.plugin.email-composer": "0.8.2dev"
+    "de.appplant.cordova.plugin.email-composer": "0.8.2dev",
+    "org.devgeeks.Canvas2ImagePlugin": "0.6.0"
 }
 // BOTTOM OF METADATA
 });

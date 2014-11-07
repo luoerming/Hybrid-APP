@@ -7,7 +7,8 @@ define ([
 	'views/item/picture',
 	'namespace',
 	'iscroll',
-], function($, _, Backbone, PictureListCollection, PictureItemView, Global, Iscroll) {
+	'appUI'
+], function($, _, Backbone, PictureListCollection, PictureItemView, Global, Iscroll, AppUI) {
 
 	var PictureView = Backbone.View.extend({
 		initialize: function() {
@@ -91,6 +92,8 @@ define ([
 			// 添加至DOM
 			$pictureList[ this._isCache ? 'html' : 'append' ]( liArr );
 
+			this.bindAppUISlide();
+
 			//数据加载完成后改变状态
 			pictureScroll.refresh();  
 			
@@ -99,6 +102,15 @@ define ([
 
 			myApp.hideIndicator();
 
+		},
+
+		bindAppUISlide: function() {
+			var delegateHandle = function() {
+				AppUI.exSlide.call(this);
+			}
+			$pictureList.undelegate().delegate('dl', 'click', delegateHandle);
+
+			console.log("ok")
 		},
 
 		// 更新缓存数据

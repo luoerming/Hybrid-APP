@@ -94,6 +94,9 @@ define (['namespace'], function(Global) {
 	};
 
 	var Slide = function(el, isDelegate) {
+
+		console.log('ok');
+
 		if (!isDelegate) el = this;
 	    var vIn = $('#'+el.dataset.vin);
 	    var vOut = $('section.active');
@@ -123,6 +126,12 @@ define (['namespace'], function(Global) {
 	    	vIn.querySelector('.scroll .content').innerHTML = '';
 	    	if (vIn.id === 'view-newsDetail') vIn.querySelector('header .icon-favor-wrap .icon-favor').classList.remove('checked');
 	    }
+
+	    if (getActionURL && vIn.id === 'view-pictureDetail') {
+	    	myApp.showIndicator();
+	    	$('#view-pictureDetail .content .ui-slider').innerHTML = '';
+	    }
+
 
 	   	// set view in return URL
 	   	if (getReturnURL) {
@@ -190,7 +199,6 @@ define (['namespace'], function(Global) {
 
         	// init click event Used delegate event
         	this.newsSwitchTabs();
-        	this.pictureSwitchTabs();
 		},
 
 		// switch newslist
@@ -224,25 +232,6 @@ define (['namespace'], function(Global) {
 			$('#view-list .iScroll').addEventListener('click', handleClicks, false);
 		},
 
-		// switch picture list
-		pictureSwitchTabs: function() {
-			function handleClicks(e) {
-				var clicked = e.target;
-				e.preventDefault();
-				// Listener slidelist
-				var pictureListItem;
-				if (clicked.parentNode.parentNode.parentNode.parentNode.dataset.vin === 'view-pictureDetail') {
-					pictureListItem = clicked.parentNode.parentNode.parentNode.parentNode;
-				} else if (clicked.parentNode.parentNode.dataset.vin === 'view-pictureDetail') {
-					pictureListItem = clicked.parentNode.parentNode;
-				}
-				if (pictureListItem) {
-					Slide(pictureListItem, true);
-					$$('nav button')[1].classList.add('active');
-				}
-			}
-			$('#view-picture .iscroll').addEventListener('click', handleClicks, false);
-		},
 
 		// asynchronous execute method
 		showSwitchTabs: function(length) {

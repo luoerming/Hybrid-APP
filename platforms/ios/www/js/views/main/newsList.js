@@ -180,6 +180,9 @@ define ([
 
 		// 提示动画
 		tips: function() {
+
+			return;
+			
 			var self = this,
 				notice = $('#view-list .noticeFinished');
 
