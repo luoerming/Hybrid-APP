@@ -6,11 +6,9 @@ define ([
 ], function($, _, Backbone) {
 
 	var HeaderView = Backbone.View.extend({
-
 		el: $('nav'),
-
 		navigationHover: function(classid) {
-			var navLi = $('#view-list .nav ul li');
+			var navLi = $('#view-list .nav .item');
 			$.each(navLi, function() {
 				var navClassId = $(this).attr('data-classid');
 				var hoverClassId = classid;
@@ -22,8 +20,6 @@ define ([
 				}
 			})
 		},
-
 	});
-
 	return new HeaderView();
 })

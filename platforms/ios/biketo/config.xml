@@ -52,4 +52,7 @@
         <param name="ios-package" value="Canvas2ImagePlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
 </widget>

@@ -116,43 +116,10 @@ header h1 {
     font-size: 18px;
 }
 
-header .nav {
+header h1.nav {
     width: 100%;
     overflow: hidden;
     position: absolute;
-}
-
-header .nav ul {
-    overflow: hidden;
-}
-
-header .nav ul li {
-    position: relative;
-    float: left;
-    width: 20%;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-}
-
-header .nav ul li a {
-    display: block;
-    font-size: 18px;
-    -webkit-text-stroke-width: .2px;
-}
-
-header .nav ul li.hover s {
-    position: absolute;
-    bottom: -1px;
-    left: 19%;
-    display: block;
-    height: 2px;
-    width: 60%;
-    background-color: #e21a22;
-}
-
-header .nav ul li.hover a {
-    color: #e21a22;
 }
 
 /**

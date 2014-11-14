@@ -11,8 +11,8 @@ define ([
 		Global.app = {
 			appRouter: AppRoute,
 			opts: {
-				url : 'http://192.168.1.111//app.php?m=mobile&'
-				// url : 'http://www.biketo.com/app.php?m=mobile&'
+				// url : 'http://192.168.1.111//app.php?m=mobile&'
+				url : 'http://www.biketo.com/app.php?m=mobile&'
 			}
 		};
 

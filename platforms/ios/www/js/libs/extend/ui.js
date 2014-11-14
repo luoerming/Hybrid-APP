@@ -94,9 +94,6 @@ define (['namespace'], function(Global) {
 	};
 
 	var Slide = function(el, isDelegate) {
-
-		console.log('ok');
-
 		if (!isDelegate) el = this;
 	    var vIn = $('#'+el.dataset.vin);
 	    var vOut = $('section.active');

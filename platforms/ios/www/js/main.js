@@ -16,6 +16,8 @@ require.config({
         webStorage: 'libs/extend/localStorage',
         appUI:      'libs/extend/ui',
         BTFramwork: 'libs/extend/bt-framework',
+        dataLazyImages: 'libs/extend/dataLazy',
+        flipsnap: 'libs/extend/flipsnap',
 
         // cordova
         cordova: '../cordova',

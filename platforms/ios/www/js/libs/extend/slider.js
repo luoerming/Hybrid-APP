@@ -36,7 +36,9 @@ define (['hammer'], function(Hammer) {
 		// Default configuration
 		config = extend({
 			dataList: [], // default table data
-			container: document.querySelector('.ui-slider'), // default wrap document
+			// container: document.querySelector('.ui-slider'), // default wrap document
+			container: '', // default wrap document
+			hiddenContainer: '',
 			direction: Hammer.DIRECTION_HORIZONTAL, //default show horizontal
 			currentIndex: 0, // default switch value
 			urlExtend: 'd/imagecache/rewidth/400',
@@ -49,10 +51,11 @@ define (['hammer'], function(Hammer) {
 
 		this.dataList = config.dataList;
 		this.container = config.container;
+		this.hiddenContainer = config.hiddenContainer;
 		this.direction = config.direction;
 		this.containerSize = this.container[dirProp(this.direction, 'offsetWidth', 'offsetHeight')]; // Get container width value
 		this.urlExtend = config.urlExtend ? config.urlExtend : '';
-		this.currentIndex = 0;
+		this.currentIndex = config.currentIndex;
 		this.showDots = config.showDots;
 		this.multiTouch = config.multiTouch;
 		this.setAttr = config.setAttr;
@@ -75,7 +78,7 @@ define (['hammer'], function(Hammer) {
 			
 			(this.showDots) && this.dots();
 			(this.multiTouch) && this.zoom();
-			(this.multiTouch) && this.articleInfo();
+			(this.multiTouch) && this.articleInfo();			
 		},
 
 		/**
@@ -84,7 +87,6 @@ define (['hammer'], function(Hammer) {
 		 */
 		renderDOM: function() {
 			var len = this.dataList.length;
-
 			var itemIndex, item, data;
 			for (itemIndex = 0; itemIndex < len; itemIndex++) {
 				var data = this.dataList[itemIndex];
@@ -111,8 +113,8 @@ define (['hammer'], function(Hammer) {
 					item.setAttribute('data-vin','view-newsDetail');
 					item.setAttribute('data-sd','sl');
 					item.setAttribute('data-return','#list/' + data['channelid']);
+					item.setAttribute('data-isNav','false');
 				}
-
 				this.container.appendChild(item);
 			}
 
@@ -279,7 +281,7 @@ define (['hammer'], function(Hammer) {
 			var container = this.container.parentNode;
 			var dotsItem = document.createElement('p');
 			var desc = container.querySelector('.description');
-
+			if (!desc) return;
 			var h1 = desc.querySelector('h1');
 			var p = desc.querySelector('p')
 			var count = desc.querySelector('.count');
@@ -296,19 +298,26 @@ define (['hammer'], function(Hammer) {
 		 * 预加载下一张图片
 		 * @param {Number} currentIndex
 		 */
-		lazyload: function() {
+		lazyload: function(currentIndex) {
+
 			var itemsArray = Array.prototype.slice.call(this.container.childNodes, 0);
 			var index = Math.max(0, Math.min(itemsArray.length -1, this.currentIndex));
 
-			(index === 0) && (itemsArray[index].querySelector('img').src = itemsArray[index].querySelector('img').getAttribute('lazyload'));
+			try {
+				itemsArray[index].querySelector('img').src = itemsArray[index].querySelector('img').getAttribute('lazyload');
+			} catch (err) {
+				this.hiddenContainer.style.display = 'none';
+			}
+
+			this.currentIndex = index;
 
 			if (index < itemsArray.length -1) {
 				var item = itemsArray[index +1].querySelector('img');
 				var currentItem = item.getAttribute('lazyload');
 
-				if (!currentItem || !item) return false;
+				if (!currentItem || !item) return;
 				item.src = currentItem;
-				item.removeAttribute('lazyload');
+				// item.removeAttribute('lazyload');
 			}
 
 		},

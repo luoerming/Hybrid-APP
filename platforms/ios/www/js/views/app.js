@@ -58,7 +58,11 @@ define ([
 			    catch(e) {
 			        error(e.message);
 			    }
-			}			
+			}
+
+			// Shortcut to console.log
+			window.log = console.log.bind(console);
+			window.oops = console.error.bind(console);
 		},
 
 		render: function() {

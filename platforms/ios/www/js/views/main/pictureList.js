@@ -109,8 +109,6 @@ define ([
 				AppUI.exSlide.call(this);
 			}
 			$pictureList.undelegate().delegate('dl', 'click', delegateHandle);
-
-			console.log("ok")
 		},
 
 		// 更新缓存数据
@@ -122,15 +120,16 @@ define ([
 
 		// 提示动画
 		tips: function() {
-			var notice = $('#view-picture .noticeFinished');
-			var self = this;
+			return;
+			// var notice = $('#view-picture .noticeFinished');
+			// var self = this;
 
-			( this._isTips ) && notice.show();
+			// ( this._isTips ) && notice.show();
 
-			notice.on('webkitAnimationEnd', function(){
-				notice.hide(); 
-				this._isTips = false;
-			});
+			// notice.on('webkitAnimationEnd', function(){
+			// 	notice.hide(); 
+			// 	this._isTips = false;
+			// });
 		}
 
 	});

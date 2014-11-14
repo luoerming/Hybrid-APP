@@ -51,6 +51,7 @@
 		802D3E7FAACA487E82CA088C /* APPEmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75B1B5FE8446FB8BB2A09F /* APPEmailComposer.m */; };
 		3FE9160EFC40419C96F8CA03 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F503B5BFAD874CAE96D375DA /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BD64F5EB5B1427188DC6A2D /* Canvas2ImagePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD912FD04904386A881F393 /* Canvas2ImagePlugin.m */; settings = {COMPILER_FLAGS = -fno-objc-arc; }; };
+		1BB92CF3A3EA46818C9770A1 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C864F0E612146A4B5C1960F /* CDVDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,8 @@
 		F503B5BFAD874CAE96D375DA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		ABD912FD04904386A881F393 /* Canvas2ImagePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Canvas2ImagePlugin.m"; path = "org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		649C77459E8D4B1AAAA718A7 /* Canvas2ImagePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Canvas2ImagePlugin.h"; path = "org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		4C864F0E612146A4B5C1960F /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		618A14CF580141D6AD402FAE /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +288,8 @@
 				433A74C760914B0E8FBACBD7 /* APPEmailComposer.h */,
 				ABD912FD04904386A881F393 /* Canvas2ImagePlugin.m */,
 				649C77459E8D4B1AAAA718A7 /* Canvas2ImagePlugin.h */,
+				4C864F0E612146A4B5C1960F /* CDVDevice.m */,
+				618A14CF580141D6AD402FAE /* CDVDevice.h */,
 			);
 			name = Plugins;
 			path = biketo/Plugins;
@@ -493,6 +498,7 @@
 				57FC7289BED74F35ABC9F686 /* CDVClipboard.m in Sources */,
 				802D3E7FAACA487E82CA088C /* APPEmailComposer.m in Sources */,
 				1BD64F5EB5B1427188DC6A2D /* Canvas2ImagePlugin.m in Sources */,
+				1BB92CF3A3EA46818C9770A1 /* CDVDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

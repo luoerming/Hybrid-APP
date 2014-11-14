@@ -5,6 +5,7 @@ define (function() {
 
 	// 设置存储值
 	function setStorage(argument) {
+		
 		var newValue = argument || {};
 		var oldValue = getStorage();
 		
@@ -14,16 +15,16 @@ define (function() {
 		(!newValue.fontsize ) && (newValue.fontsize = oldValue.fontsize);
 		(!newValue.switchNight ) && (newValue.switchNight = oldValue.switchNight);
 
+		
 		var obj = { 
 			'classId' : newValue.classId || '0', 
 			'favor' : newValue.favor || '0', 
 			'userinfo' : newValue.userinfo || '0', 
 			'fontsize' : newValue.fontsize || '16', 
-			'switchNight' : newValue.switchNight || 'false', 
+			'switchNight' : newValue.switchNight || 'false'
 		};
 
 		localStorage.setItem('biketo', JSON.stringify(obj));
-		
 	};
 
 	// 获取已存储的值

@@ -43,7 +43,8 @@ section {
 section .scroll, 
 section .scrollMask, 
 section header button, 
-section .nav, 
+section .nav,
+section .nav-select-header-icon,
 section,  header button .label {
 	-webkit-animation-fill-mode: forwards;
 	        animation-fill-mode: forwards;
@@ -53,7 +54,8 @@ section,  header button .label {
 section,  
 section .scroll, 
 section .scrollMask, 
-section .nav, 
+section .nav,
+section .nav-select-header-icon,
 section header button .label {
 	-webkit-animation-timing-function: cubic-bezier(.1, .7, .1, 1);
 	        animation-timing-function: cubic-bezier(.1, .7, .1, 1);
@@ -76,7 +78,12 @@ section header button .label {
     -webkit-animation-name: slin-scrollMask;
             animation-name: slin-scrollMask;
 }
-.slin .nav {
+.slin .nav,
+.slin .nav-select-header-icon {
+    -webkit-animation-name: slin-textbox;
+            animation-name: slin-textbox;
+}
+.slin .nav-select-header-icon {
     -webkit-animation-name: slin-textbox;
             animation-name: slin-textbox;
 }
@@ -99,7 +106,8 @@ section header button .label {
     -webkit-animation-name: slout-left-nav-btn;
             animation-name: slout-left-nav-btn;
 }
-.slout .nav {
+.slout .nav,
+.slout .nav-select-header-icon {
     -webkit-animation-name: slout-textbox;
             animation-name: slout-textbox;
 }

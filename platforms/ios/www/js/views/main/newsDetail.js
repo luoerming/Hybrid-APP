@@ -6,8 +6,10 @@ define ([
 	'webStorage',
 	'text!templates/newsDetail.html',
 	'models/newsDetaill',
-	'views/main/userFavor'
-], function(_, Backbone, Global, WebStorage, Tpl, NewsDetaillModel, UserFavor) {
+	'views/main/userFavor',
+	'dataLazyImages',
+	'slider',
+], function(_, Backbone, Global, WebStorage, Tpl, NewsDetaillModel, UserFavor, DataLazyImages, Slider) {
 
 	var NewsDetailView = Backbone.View.extend({
 
@@ -24,15 +26,16 @@ define ([
 
 		render: function(classid, id) {
 			this.$el = document.querySelector('#view-newsDetail');
+			this.$elContent = this.$el.querySelector('.content .bd');
 			this.$vOut = document.querySelector('section.active');
-
 			this.$actionComment = this.$el.querySelector('#view-newsDetail header button.icon-comment-wrap');
 
 			this.$vOut.classList.toggle('active');
 			this.$vOut.classList.add('hidden');
 			this.$el.classList.remove('hidden');
 			this.$el.classList.add('active');
-			
+
+
 			myApp.showIndicator();
 
 			this.model = new NewsDetaillModel();
@@ -45,11 +48,13 @@ define ([
 			this.model.listenTo(this.model, 'sync', _.bind(this.newsFavor, this));
 			this.model.listenTo(this.model, 'sync', _.bind(this.articleComment, this));
 			this.model.listenTo(this.model, 'sync', _.bind(this.articleShare, this));
+
+
 		},
 
 		renderAll: function(model) {
 			var self = this;
-			var newstext = model.get('newstext').replace(/(\[!--empirenews.page--\])/g, '').replace(/(img src)/g, 'img data-src');
+			var newstext = model.get('newstext').replace(/(\[!--empirenews.page--\])/g, '').replace(/(src)/g, 'data-src');
 			var container = document.querySelector('#view-newsDetail .content');
 			var containerTempData = {
 				title: model.get('title'),
@@ -58,6 +63,7 @@ define ([
 				newstime: model.get('newstime'),
 				classname: model.get('classname'),
 			};
+
 			var headerCommentTempData = {
 				classid: model.get('classid'),
 				id: model.get('id')
@@ -67,7 +73,99 @@ define ([
 			container.innerHTML = _.template(self.template(), containerTempData);
 			this.$actionComment.setAttribute('data-action', '#comment/' + model.get('classid') + '/' + model.get('id'));
 			this.$actionComment.setAttribute('data-return', '#list/'+ model.get('classid')+'/'+model.get('id'));
+			
 			myApp.hideIndicator();
+
+			this.newsDetailSlideFunc();
+
+			this.lazyLoadImages($(this.$el).find('.scroll'));
+		},
+
+		lazyLoadImages: function(container) {
+			container.find('img').each(function(i){
+				var img = $(this);
+				var imgParent = img.parent();
+            	
+            	// img.attr('data-src', img.attr('src'));
+            	img.attr('data-img', img.attr('data-src'));
+				img.attr('data-src','http://www.biketo.com/d/imagecache/rewidth/384' + img.attr('data-src'));
+				img.attr('data-index', i);
+				img.addClass('lazy');
+				if (imgParent[0].tagName === 'SPAN' || imgParent[0].tagName === 'A') imgParent = imgParent.parents('p');
+            	imgParent.addClass('algin-center');
+			});
+
+			$("img.lazy").lazyload({
+				container: container,
+				effect : "fadeIn",
+			    threshold : 500
+			});
+		},
+
+		newsDetailSlideFunc: function() {
+
+			var self = this;
+			var sliderWrap = document.querySelector('#view-newsDetail .ui-slider');
+			var newsDetailSlide = $(self.$el).find('.news-detaill-slide');
+			var container = $(self.$el).find('.scroll');
+			var buttonBack = $(self.$el).find('.news-detail-slide-button .back-page');
+			var buttonSave = $(self.$el).find('.news-detail-slide-button .save-images');
+
+			var buttonDelegateHandle = function() {
+				var clicked = $(this);
+				if (clicked.hasClass('back-page')) {
+					newsDetailSlide.fadeOut();
+				}
+
+				if (clicked.hasClass('save-images')) {
+					var imgesSrc = $(self.$el).find('.item.current img')[0].src;
+					var success = function(msg){
+					    self.tips({text: '已保存至相册'});
+					}
+					var error = function(err){
+					    self.tips({text: '保存失败！未知错误：'+err+'', className: 'icon-round-close'});
+					}
+					window.saveImageToPhone(imgesSrc, success, error);
+					log("saveing ...", imgesSrc)
+				}
+
+			}
+
+			var delegateHandle = function() {
+				var index = $(this).attr('data-index');
+				var imagesArray = [];
+
+	       		// 幻灯片
+				container.find('img').each(function(i){
+					var img = $(this);
+	            	var imagesArrayObj = {
+	            		title: '',
+	            		titlepic: img.attr('data-img')
+	            	}
+	            	imagesArray.push(imagesArrayObj);
+				});
+
+				sliderWrap.innerHTML = '';
+				
+				setTimeout(function() {
+					new Slider({
+						container: sliderWrap,
+						dataList: imagesArray,
+						title: '',
+						hiddenContainer: newsDetailSlide[0],
+						currentIndex: index,
+						multiTouch: true, // 多手势操作
+						urlExtend: false, // 不使用扩展地址
+						showDots: false, // 取消点显示，则使用数字类型
+					});
+				})
+
+				// show detail slide
+				newsDetailSlide.fadeIn();
+			}
+
+			$(self.$el).undelegate().delegate('.back-page, .save-images', 'click', buttonDelegateHandle);
+			container.undelegate().delegate('img', 'click', delegateHandle);
 		},
 
 		/**
@@ -293,6 +391,20 @@ define ([
 			   .parents().css('text-align','center');
 		},
 
+		tips: function(obj) {
+			var tipsWrape = $('.commom-tips');
+			var tipsText = tipsWrape.find('.text');
+			var iconfont = tipsWrape.find('.iconfont');
+
+			(obj.className === 'icon-round-close') ? iconfont.removeClass('icon-round-check').addClass('icon-round-close') : iconfont.addClass('icon-round-check');
+
+			tipsWrape.addClass('fadeOut animated')
+				.on('webkitAnimationEnd', function() {
+					$(this).removeClass('fadeOut animated');
+				});
+
+			tipsText.html(obj.text);
+		},
 		/**
 		 * 顶文章
 		 * @param cid 

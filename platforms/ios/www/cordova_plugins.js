@@ -49,6 +49,13 @@ module.exports = [
         "clobbers": [
             "window.canvas2ImagePlugin"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.device/www/device.js",
+        "id": "org.apache.cordova.device.device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -60,7 +67,8 @@ module.exports.metadata =
     "xu.li.cordova.wechat": "0.4",
     "com.verso.cordova.clipboard": "0.1.0",
     "de.appplant.cordova.plugin.email-composer": "0.8.2dev",
-    "org.devgeeks.Canvas2ImagePlugin": "0.6.0"
+    "org.devgeeks.Canvas2ImagePlugin": "0.6.0",
+    "org.apache.cordova.device": "0.2.12"
 }
 // BOTTOM OF METADATA
 });
