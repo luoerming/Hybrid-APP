@@ -78,7 +78,9 @@ define ([
 			var getStorageItem = JSON.parse(localStorage.getItem('navigatorCustom')) || '';
 			var getDefSelected = getStorageItem.selected;
 			var getDefUnselect = getStorageItem.unselect;
-			var defaultSelected = defaultUnselected = [];
+			var defaultSelected = [];
+			var defaultUnselected = [];
+
 
 			if (!getDefSelected) {
 				$addedColumn.find('.item').each(function() {
@@ -97,8 +99,6 @@ define ([
 			var selected = getDefSelected || defaultSelected;
 			var unselect = getDefUnselect || defaultUnselected;
 
-			log( selected );
-
 			var obj = {
 				'selected': selected,
 				'unselect': unselect
@@ -107,34 +107,143 @@ define ([
 			// initialize localStorage data
 			if (!getStorageItem) localStorage.setItem('navigatorCustom', JSON.stringify(obj));
 
-		
 			var refreshNav = function() {
+				var getStorageItem = JSON.parse(localStorage.getItem('navigatorCustom')) || '';
+				var getDefSelected = getStorageItem.selected;
+				var reGetDefSelected = [];
+				var _i = 0;
+				var _length = getDefSelected.length;
+				var currentClassId = WebStorage.get().classId;
 
-			}
-
-			var overwriteSelectContent = function() {
-			}
-		
-			var refreshNav = function() {
-
-			}
-
-			var overwriteSelectContent = function() {
-
-			}
-
-			var addLoclStorege = function() {
-				obj.selected = getDefSelected.push('<s>/aaaaa</s>');
-				localStorage.setItem('navigatorCustom', JSON.stringify(obj))
-			}
-
-			var removeLoclStorege = function() {
-				var unselectArray = [];
-				for (var i = 0; i < getDefUnselect.length; i++) {
-					if (getDefUnselect[i].indexOf('="143"') <= 0) unselectArray.push(getDefUnselect[i]);
+				var navPostion = function(thisSortId, maxNumber, isLengthen) {
+					setTimeout(function(){
+						(thisSortId <= 3) && flipsnap.moveToPoint(0);
+						(thisSortId >= 3) && flipsnap.moveToPoint(1);
+						(thisSortId >= 4) && flipsnap.moveToPoint(2);
+						if (thisSortId >= 6) {
+							flipsnap.moveToPoint(3);
+						}
+						if (thisSortId >= 7) {
+							flipsnap.moveToPoint(4);
+						}
+						if (thisSortId >= 8) {
+							isLengthen ? flipsnap.moveToPoint(6) : flipsnap.moveToPoint(5);
+						}
+						if (thisSortId >= 9) {
+							isLengthen ? flipsnap.moveToPoint(7) : flipsnap.moveToPoint(6);
+						}
+						if (thisSortId >= 10) {
+							isLengthen ? flipsnap.moveToPoint(8) : flipsnap.moveToPoint(7);
+						}
+						if (thisSortId >= 11) {
+							isLengthen ? flipsnap.moveToPoint(9) : flipsnap.moveToPoint(8);
+						}
+						if (thisSortId >= 12) {
+							isLengthen ? flipsnap.moveToPoint(10) : flipsnap.moveToPoint(9);
+						}
+						if (thisSortId >= 13) {
+							isLengthen ? flipsnap.moveToPoint(11) : flipsnap.moveToPoint(10);
+						}
+						if (thisSortId >= 14) {
+							isLengthen ? flipsnap.moveToPoint(12) : flipsnap.moveToPoint(11);
+						} 
+						if (thisSortId >= 15) {
+							isLengthen ? flipsnap.moveToPoint(13) : flipsnap.moveToPoint(12);
+						} 
+						if (thisSortId >= 16) {
+							isLengthen ? flipsnap.moveToPoint(14) : flipsnap.moveToPoint(13);
+						} 
+						if (thisSortId >= 17) {
+							isLengthen ? flipsnap.moveToPoint(15) : flipsnap.moveToPoint(14);
+						} 
+						if (thisSortId >= 18) {
+							isLengthen ? flipsnap.moveToPoint(16) : flipsnap.moveToPoint(15);
+						} 
+						if (thisSortId >= 18 || thisSortId >= 19 || thisSortId >= 20) {
+							isLengthen ? flipsnap.moveToPoint(16) : flipsnap.moveToPoint(15);
+						} 
+					}, 0);
 				}
-				obj.unselect = unselectArray;
-				localStorage.setItem('navigatorCustom', JSON.stringify(obj))
+
+				var fspointmoveHandle = function() {
+
+				}
+
+				var navItemDelegateHandle = function() {
+					var thisSortId = $(this).attr('data-sort');
+					var isLengthen = $(this).hasClass('item-lengthen');
+					navPostion(thisSortId, _length, isLengthen);
+				}
+
+				for ( _i; _i < _length; _i++ ) {
+					var reItem = $(getDefSelected[_i]).attr('data-sort', _i)[0].outerHTML;
+					if ( $(reItem).attr('data-classid') == currentClassId ) {
+						reItem = $(reItem).addClass('hover')[0];
+						var thisSortId = $(reItem).attr('data-sort');
+						var isLengthen = $(reItem).hasClass('item-lengthen');
+						navPostion(thisSortId, _length, isLengthen);
+					}
+					reGetDefSelected.push(reItem);					
+				};
+
+				$navSrollWrap.html(reGetDefSelected);
+
+				flipsnap.refresh();
+
+				$(flipsnap.element).on('fspointmove', fspointmoveHandle);
+				$navWrap.undelegate().delegate('.item', 'click', navItemDelegateHandle);
+			}
+
+			var overwriteSelectContent = function() {
+				var getStorageItem = JSON.parse(localStorage.getItem('navigatorCustom')) || '';
+				var getDefSelected = getStorageItem.selected;
+				var getDefUnselect = getStorageItem.unselect;
+
+				if (getDefSelected) $addedColumn.html(getDefSelected);
+				if (getDefUnselect) $removeColumn.html(getDefUnselect);
+			}
+
+			var removeLoclStorege = function(elClassId, type) {
+				if (!elClassId) return;
+				var getStorageItem = JSON.parse(localStorage.getItem('navigatorCustom')) || '';
+				var selectArray = [];
+				var unselectArray = [];
+
+				if (type === 'selected') {
+					for (var i = 0; i < getStorageItem.selected.length; i++) {
+						if (getStorageItem.selected[i].indexOf('="'+elClassId+'"') <= 0) selectArray.push(getStorageItem.selected[i]);
+					}
+					obj.selected = selectArray;
+					localStorage.setItem('navigatorCustom', JSON.stringify(obj))
+				}
+
+				if (type === 'unselect') {
+					for (var i = 0; i < getStorageItem.unselect.length; i++) {
+						if (getStorageItem.unselect[i].indexOf('="'+elClassId+'"') <= 0) unselectArray.push(getStorageItem.unselect[i]);
+					}
+					obj.unselect = unselectArray;
+					localStorage.setItem('navigatorCustom', JSON.stringify(obj))
+				}
+			}
+
+			var addLoclStorege = function(el, type) {
+				if (!el) return;
+				var getStorageItem = JSON.parse(localStorage.getItem('navigatorCustom')) || '';
+				var classId = $(el).attr('data-classid');
+
+				if (type === 'selected') {
+					getStorageItem.selected.push(el);
+					obj.selected = getStorageItem.selected;
+					localStorage.setItem('navigatorCustom', JSON.stringify(obj));
+					removeLoclStorege(classId, 'unselect');
+				}
+
+				if (type === 'unselect') {
+					getStorageItem.unselect.push(el);
+					obj.unselect = getStorageItem.unselect;
+					localStorage.setItem('navigatorCustom', JSON.stringify(obj));
+					removeLoclStorege(classId, 'selected');
+				}
 			}
 
 			var hiddenSelectNav = function() {
@@ -153,6 +262,8 @@ define ([
 
 			var toggleNavHandle = function(e) {
 				$navWrap.hasClass('active') ? hiddenSelectNav() : showSelectNav();
+				overwriteSelectContent();
+				refreshNav();
 			}
 
 			var toggleEditHandle = function() {
@@ -170,18 +281,33 @@ define ([
 
 			var addedColumnDelageterHandle = function(e) {
 				if (isEditDone) {
+					if (this.outerHTML.indexOf('="1"') >=0) return;
 					e.preventDefault()
 					$(this).find('.iconfont').remove();
 					$removeColumn.append(this);
+					addLoclStorege(this.outerHTML, 'unselect');
 				}
 				if (!isEditDone) hiddenSelectNav();
 			}
 
 			var removeColumnDelageterHandle = function(e) {
+				var classId = $(this).attr('data-classid');
 				$(this).append('<i class="iconfont icon-remove"></i>');
 				$addedColumn.append(this);
-				e.preventDefault()
+				e.preventDefault();
+
+				// add to localstorage 
+				addLoclStorege(this.outerHTML, 'selected');
 			}
+
+			// init flipsnap 
+			var flipsnap = Flipsnap($navSrollWrap[0], {
+
+			});
+
+			window.flipsnap = flipsnap;
+
+			refreshNav();
 
 			// bind event
 			$navSelectHaderButton.off().on('click', toggleNavHandle);
@@ -193,11 +319,6 @@ define ([
 			$removeColumn.undelegate('click', removeColumnDelageterHandle);
 			$removeColumn.delegate('.item', 'click',removeColumnDelageterHandle)
 
-			// init flipsnap 
-			Flipsnap($navSrollWrap[0], {
-   				 distance: 50,
-   				 maxPoint: 1
-			});
 		},
 
 		// 幻灯片
@@ -225,6 +346,12 @@ define ([
 
 			var sliderInitCount = 0;
 			function buildSlider(collection) {
+
+				if (collection.length === 0) {
+					this.$newsListScrollWrepper.find('.ui-sliderWrap').hide();
+					return;
+				};
+
 				if (sliderInitCount++ > 0) return;
 
 				for (var i = 0; i < collection.models.length; i++) {

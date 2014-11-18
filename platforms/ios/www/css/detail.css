@@ -24,7 +24,7 @@
 	font-size: 25px;
 }
 #view-newsDetail .scroll {
-	overflow: auto;
+	overflow-y: auto;
 	height: 100%;
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
@@ -268,7 +268,7 @@
 	top: 0;
 }
 #view-member .member {
-	overflow: auto;
+	overflow-y: auto;
 	height: 100%;
 	-webkit-overflow-scrolling: touch;
 	background: #f8f8f8;
@@ -414,7 +414,7 @@
 }
 #view-favor .scroll {
 	border-top: 1px solid rgb(238, 238, 238);
-	overflow: auto;
+	overflow-y: auto;
 	height: 100%;
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
@@ -602,7 +602,7 @@
 	z-index: 1;
 }
 #view-comment .scroll {
-	overflow: auto;
+	overflow-y: auto;
 	height: 100%;
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
@@ -862,7 +862,7 @@
 }
 #view-myComment .scroll {
 	border-top: 1px solid rgb(238, 238, 238);
-	overflow: auto;
+	overflow-y: auto;
 	height: 100%;
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
@@ -880,7 +880,7 @@
 }
 #view-myComment .content .comment-item {
 	margin-bottom: 24px;
-	border-bottom: none;;
+	border-bottom: none;
 }
 #view-myComment .content .comment-item .comment-item-inner {
 	padding: 5px 5px;
@@ -1126,7 +1126,7 @@
  * @namespace view-about-us
  */
 #view-aboutUs .scroll {
-	overflow: auto;
+	overflow-y: auto;
 	height: 100%;
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;

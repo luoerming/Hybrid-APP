@@ -276,10 +276,10 @@ define ([
 			if (!UserLogin.isLoginFunc()) {
 				MemberCenter.render();
 				try {
-					window.navigator.notification.confirm("未登录请登录后继续操作", resultCallback, "", ["取消", "确定"]);
+					window.navigator.notification.confirm("请登录后继续操作", resultCallback, "", ["取消", "确定"]);
 				} catch (err) {
 					// debug
-					if (confirm('未登录请登录后继续操作'))
+					if (confirm('请登录后继续操作'))
 						resultCallback(2)
 					else
 						return;

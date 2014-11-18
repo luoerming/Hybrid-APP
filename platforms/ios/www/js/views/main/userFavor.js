@@ -174,8 +174,8 @@ define ([
 					console.log('addToServer: ', self.args.models.classid, self.args.models.id);
 
 					saveButton.classList.add('checked');
-					tipsIcon.classList.remove('icon-round-check');
-					tipsIcon.classList.add('icon-round-close');
+					tipsIcon.classList.remove('icon-round-close');
+					tipsIcon.classList.add('icon-round-check');
 					tipsText.innerHTML = '收藏成功';
 				}
 				else {
@@ -188,8 +188,8 @@ define ([
 					console.log('removeToServer: ', self.args.models.classid, self.args.models.id);
 
 					saveButton.classList.remove('checked');
-					tipsIcon.classList.remove('icon-round-close');
-					tipsIcon.classList.add('icon-round-check');
+					tipsIcon.classList.remove('icon-round-check');
+					tipsIcon.classList.add('icon-round-close');
 					tipsText.innerHTML = '已取消收藏';
 
 					// else update renderlist function

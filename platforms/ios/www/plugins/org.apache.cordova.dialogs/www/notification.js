@@ -37,7 +37,7 @@ module.exports = {
      * @param {String} buttonLabel          Label of the close button (default: OK)
      */
     alert: function(message, completeCallback, title, buttonLabel) {
-        var _title = (title || "Alert");
+        var _title = (title || "");
         var _buttonLabel = (buttonLabel || "OK");
         exec(completeCallback, null, "Notification", "alert", [message, _title, _buttonLabel]);
     },
@@ -52,7 +52,7 @@ module.exports = {
      * @param {Array} buttonLabels          Array of the labels of the buttons (default: ['OK', 'Cancel'])
      */
     confirm: function(message, resultCallback, title, buttonLabels) {
-        var _title = (title || "Confirm");
+        var _title = (title || "");
         var _buttonLabels = (buttonLabels || ["OK", "Cancel"]);
 
         // Strings are deprecated!

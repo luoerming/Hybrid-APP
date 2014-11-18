@@ -73,8 +73,8 @@
 	display: flex;
 
   /*两端对齐（作用于容器）*/
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+  /*-webkit-justify-content: space-between;*/
+  /*justify-content: space-between;*/
  
 }
 #view-list .nav-wrap .nav .viewport .item {
@@ -88,15 +88,20 @@
 #view-list .nav-wrap .nav .viewport .item:first-child {
 	margin-left: 9px;
 }
-#view-list .nav-wrap .nav .viewport .item.item-lengthen {
-	width: 65px;
-	max-width: 65px;
-	min-width: 65px;
+#view-list .nav-wrap .nav .viewport .item .iconfont {
+	display: none;
+	visibility: hidden;
+	opacity: 0;
 }
-#view-list .nav-wrap .nav .viewport .item.item-lengthen.hover {
+#view-list .nav-wrap .nav .viewport .item.item-lengthen {
 	width: 75px;
 	max-width: 75px;
 	min-width: 75px;
+}
+#view-list .nav-wrap .nav .viewport .item.item-lengthen.hover {
+	width: 85px;
+	max-width: 85px;
+	min-width: 85px;
 }
 #view-list .nav-wrap .nav .viewport .item {
     display: block;
@@ -343,6 +348,10 @@
 	padding: 0px;
 	margin: 6px 0;
 }
+#view-list .nav-wrap .nav-select-content .nav-select-content-list.added-column .item:first-child a {
+	border: none;
+}
+
 #view-list .nav-wrap .nav-select-content .nav-select-content-list .item a {
 	display: block;
 	border: 1px solid rgba(226, 226, 226, 1);
